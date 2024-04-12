@@ -1,0 +1,26 @@
+.content-item {
+    width: calc(25% - 20px); /* Ajusta el ancho de cada elemento según sea necesario */
+    margin-bottom: 20px;
+}
+
+.content-image {
+    width: 100%;
+    height: 200px; /* Altura deseada para la imagen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+.content-details {
+    margin-top: 10px;
+}
+
+.content-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.content-date {
+    font-size: 14px;
+    margin-left: 10px; /* Ajusta el espacio entre el nombre y la fecha */
+}
