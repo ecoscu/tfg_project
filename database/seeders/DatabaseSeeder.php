@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
 
         Contenido::create([
             'name' => 'Cars',
+            'slug' => 'cars',
             'Img' => $imagencars,
             'Type' => 'Movie',
             'Genre' => 'Action',
@@ -41,6 +42,7 @@ class DatabaseSeeder extends Seeder
 
         Contenido::create([
             'name' => 'Gray´s Anatomy',
+            'slug' => 'gray-s-anatomy',
             'Img' => $imagengray,
             'Type' => 'Series',
             'Genre' => 'Drama',
@@ -51,6 +53,7 @@ class DatabaseSeeder extends Seeder
 
         Contenido::create([
             'name' => 'Game of Thrones',
+            'slug' => 'game-of-thornes',
             'Img' => $imagenGOT,
             'Type' => 'Series',
             'Genre' => 'Drama',
@@ -61,6 +64,7 @@ class DatabaseSeeder extends Seeder
         
         Contenido::create([
             'name' => 'The Conjuring',
+            'slug' => 'the-conjuring',
             'Img' => $imagenConj,
             'Type' => 'Movie',
             'Genre' => 'Horror',

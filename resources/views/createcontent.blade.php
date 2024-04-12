@@ -1,4 +1,4 @@
-@include('layouts.app')
+
 
 <body>
     <div class="py-5 max-w-7xl text-justify">    

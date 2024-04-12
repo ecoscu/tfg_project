@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContenidoRequest;
 use Illuminate\Http\Request;
 use App\Models\Contenido;
+use Illuminate\Support\Facades\Auth;
 
 class ContentController extends Controller
 {
     public function show()
     {
+        abort_unless(Auth::check(), 401);
         $contents = Contenido::orderBy('created_at', 'desc')->get();
 
         foreach ($contents as $content) {
@@ -42,5 +44,16 @@ class ContentController extends Controller
         } else {
             return "No se ha enviado ninguna imagen.";
         }
+    }
+
+    public function slug($slug){
+
+        abort_unless(Auth::check(), 401);
+        
+        $content = Contenido::where('slug', $slug)->first();
+        
+        return view('content', [
+            'content' => $content
+        ]);
     }
 }

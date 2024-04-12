@@ -25,6 +25,8 @@ Route::get('/', function () {
 
 Route::get('/Home', [\App\Http\Controllers\ContentController::class, 'show'])->name('dashboard');
 
+Route::get('/content/{slug}', [\App\Http\Controllers\ContentController::class, 'slug'])->name('slug');
+
 Route::get('/CreateContent',function(){
     return view('createcontent');
 })->name('createcontent');

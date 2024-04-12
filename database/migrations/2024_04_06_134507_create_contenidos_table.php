@@ -12,7 +12,8 @@ return new class extends Migration {
     {
         Schema::create('contenidos', function (Blueprint $table) {
             $table->id();
-            $table->string('Name');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->enum('Type', ['Movie', 'Series']);
             $table->enum('Genre', ['Comedy', 'Drama', 'Action', 'Musical', 'Horror']);
             $table->date('ReleaseDate');
@@ -23,7 +24,7 @@ return new class extends Migration {
 
         DB::statement("ALTER TABLE contenidos ADD Img LONGBLOB");
         DB::statement("ALTER TABLE contenidos 
-        MODIFY COLUMN Img LONGBLOB AFTER Name");
+        MODIFY COLUMN Img LONGBLOB AFTER slug");
     }
 
     /**
