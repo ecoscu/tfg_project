@@ -25,6 +25,10 @@ return new class extends Migration {
         DB::statement("ALTER TABLE contenidos ADD Img LONGBLOB");
         DB::statement("ALTER TABLE contenidos 
         MODIFY COLUMN Img LONGBLOB AFTER slug");
+
+        DB::statement("ALTER TABLE contenidos ADD Sinopsis LONGBLOB");
+        DB::statement("ALTER TABLE contenidos 
+        MODIFY COLUMN Sinopsis LONGBLOB AFTER Img");
     }
 
     /**

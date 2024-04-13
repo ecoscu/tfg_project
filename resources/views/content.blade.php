@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>PA TI MI COLA</h1>
+    <h1>{{$content->name}}</h1>
+    <h3>{{$content->Sinopsis}}</h3>
 </body>
 </html>

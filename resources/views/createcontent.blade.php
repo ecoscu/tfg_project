@@ -1,12 +1,23 @@
+<!DOCTYPE html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cretate</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
 
 <body>
-    <div class="py-5 max-w-7xl text-justify">    
+    <div class="py-5 max-w-7xl text-justify">
         <div class="container">
             <div class="row justify-content-center">
-                <form action="{{ route('content.store') }}" method="post" enctype="multipart/form-data" class="col-md-6 mx-auto">
+                <form action="{{ route('content.store') }}" method="post" enctype="multipart/form-data"
+                    class="col-md-6 mx-auto">
                     @csrf
-                    <h1 style="font-family: 'figtree'; font-size:25px; font-weight: bold;">NUEVO CONTENIDO</h1>
+                    <h1 style="font-family: 'figtree'; font-size:25px; font-weight: bold;" class="text-center">NUEVO CONTENIDO</h1>
                     <br>
                     <div class="form-group">
                         <label for="name">Nombre:</label>
@@ -15,6 +26,11 @@
                     <div>
                         <label for="file">Cartelera:</label>
                         <input type="file" name='file' id='file' accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="sinopsis">Sinopsis:</label>
+                        <textarea class="form-control" id="sinopsis" name="sinopsis"></textarea>
+                        
                     </div>
                     <div class="form-group">
                         <label for="type">Tipo:</label>
@@ -52,13 +68,14 @@
                         <input type="number" step="0.1" class="form-control" id="rating" name="rating">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                      </div>
                 </form>
             </div>
         </div>
     </div>
-    
-    
+
 </body>
 
 </html>

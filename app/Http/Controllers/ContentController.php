@@ -12,7 +12,7 @@ class ContentController extends Controller
     public function show()
     {
         abort_unless(Auth::check(), 401);
-        $contents = Contenido::orderBy('created_at', 'desc')->get();
+        $contents = Contenido::get();
 
         foreach ($contents as $content) {
             // Convierte la imagen a base64
@@ -26,7 +26,8 @@ class ContentController extends Controller
 
     public function store(ContenidoRequest $request)
     {
-
+        abort_unless(Auth::check(), 401);
+        
         if ($request->hasFile('file')) {
             // Lee la imagen como un arreglo de bytes
             $imagen = file_get_contents($request->file('file')->getRealPath());
@@ -34,6 +35,7 @@ class ContentController extends Controller
             $content = new Contenido;
             $content->name = $request->input('name');
             $content->Img = $imagen;
+            $content->Sinopsis = $request->input('sinopsis');
             $content->Type = $request->input('type');
             $content->Genre = $request->input('genre');
             $content->ReleaseDate = $request->input('release_date');
@@ -56,4 +58,5 @@ class ContentController extends Controller
             'content' => $content
         ]);
     }
+
 }
