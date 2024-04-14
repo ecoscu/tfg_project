@@ -1,0 +1,72 @@
+body{
+    background-color: rgb(20, 20, 20);
+}
+
+.top-div {
+    width: 98%;
+    height: 300px;
+    text-align: center;
+    background-size: cover;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+    background-position: center center;
+    margin-top: 5px;
+    filter: brightness(0.5);
+}
+
+.content-img {
+    position: absolute; 
+    top: 240px; 
+    left: 40px; 
+    width: 265px; 
+    z-index: 1; 
+    text-align: center; 
+}
+
+.content-image {
+    width: 90%; /* Ajusta el ancho de la imagen al 100% del div .content-img */
+    height: auto; /* Permite que la altura de la imagen se ajuste automáticamente */
+    border-radius: 5px; /* Agrega bordes redondeados a la imagen */
+    object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+}
+
+
+.options{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+#star-icon {
+    color: rgb(197, 197, 197);
+    font-size: 22px; /* Tamaño del icono */
+}
+
+#star-icon:hover {
+    color: rgb(255, 221, 0); /* Cambia el color del ícono a dorado */
+    scale: 120%;
+}
+
+
+#heart-icon {
+    color: rgb(197, 197, 197);
+    font-size: 22px; /* Tamaño del ícono */
+}
+
+#heart-icon:hover {
+    color: rgb(255, 0, 0); /* Cambia el color del ícono a dorado */
+    scale: 120%;
+}
+
+#list-icon {
+    color: rgb(197, 197, 197);
+    font-size: 22px; /* Tamaño del ícono */
+}
+
+#list-icon:hover {
+    color: rgb(89, 227, 54);
+    scale:120%;
+}
+
+

@@ -1,5 +1,5 @@
-body,html {
-    background-size: 100;
+body, html {
+    background-size: 100%;
     color: white;
     height: 100%;
     margin: 0;
@@ -10,8 +10,87 @@ body,html {
 
 body {
     background-image: url("/img/fondo.png");
-};
+}
+
+.titulo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 70px;
+}
 
 .container {
     text-align: center;
 }
+
+.transparent-div {
+    background: rgba(98, 98, 98, 0.25);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    width: 70%;
+}
+
+.button-container {
+    display: flex; /* Cambiamos a un contenedor flex para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 100px; /* Espacio entre los botones */
+}
+
+.button-wrapper {
+    width: 150px;
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex; /* Cambiamos a un contenedor flex para alinear el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    align-items: center; /* Centra el texto verticalmente */
+}
+
+.button-wrapper a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: flex; /* Convertir enlace a elemento flex */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center; /* Centrar el contenido verticalmente */
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+.button-wrapper:hover,
+.button-wrapper:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #a742ff;
+}
+
+.button-24:active {
+    opacity: .5;
+}
+
+
+.route{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block; /* Hacer que el enlace sea un elemento de bloque */
+    width: 100%; /* Ancho al 100% del contenedor */
+    height: 100%; /* Altura al 100% del contenedor */
+}
+
+
+
