@@ -33,6 +33,7 @@ Route::get('/CreateContent',function(){
 
 Route::post('/CreateContent', [\App\Http\Controllers\ContentController::class, 'store'])->name('content.store');
 
+Route::get('/toggle-favorite/{content_id}', [\App\Http\Controllers\FavouritesController::class, 'addFavorite'])->name('toggle.favorite');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

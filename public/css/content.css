@@ -1,4 +1,4 @@
-body{
+body {
     background-color: rgb(20, 20, 20);
 }
 
@@ -7,31 +7,43 @@ body{
     height: 300px;
     text-align: center;
     background-size: cover;
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
+    margin-left: auto;
+    /* Centra horizontalmente */
+    margin-right: auto;
+    /* Centra horizontalmente */
     background-position: center center;
-    margin-top: 5px;
+    margin-top: 10px;
     filter: brightness(0.5);
 }
 
 .content-img {
-    position: absolute; 
-    top: 240px; 
-    left: 40px; 
-    width: 265px; 
-    z-index: 1; 
-    text-align: center; 
+    position: absolute;
+    top: 240px;
+    left: 5%;
+    width: 30%;
+    max-width: 350px;
+    z-index: 1;
+    text-align: center;
 }
 
 .content-image {
-    width: 90%; /* Ajusta el ancho de la imagen al 100% del div .content-img */
-    height: auto; /* Permite que la altura de la imagen se ajuste automáticamente */
-    border-radius: 5px; /* Agrega bordes redondeados a la imagen */
-    object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+    width: 90%;
+    /* Ajusta el ancho de la imagen al 100% del div .content-img */
+    height: auto;
+    /* Permite que la altura de la imagen se ajuste automáticamente */
+    border-radius: 5px;
+    /* Agrega bordes redondeados a la imagen */
+    object-fit: cover;
+    /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
 }
 
+.fecha {
+    color: white;
+    font-weight: 700;
+    margin-top: 2px;
+}
 
-.options{
+.options {
     margin-top: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -40,33 +52,61 @@ body{
 
 #star-icon {
     color: rgb(197, 197, 197);
-    font-size: 22px; /* Tamaño del icono */
+    font-size: 22px;
+    /* Tamaño del icono */
 }
 
 #star-icon:hover {
-    color: rgb(255, 221, 0); /* Cambia el color del ícono a dorado */
+    color: rgb(255, 221, 0);
+    /* Cambia el color del ícono a dorado */
     scale: 120%;
 }
 
-
 #heart-icon {
     color: rgb(197, 197, 197);
-    font-size: 22px; /* Tamaño del ícono */
+    font-size: 22px;
+    /* Tamaño del ícono */
 }
 
 #heart-icon:hover {
-    color: rgb(255, 0, 0); /* Cambia el color del ícono a dorado */
+    color: rgb(255, 0, 0);
+    /* Cambia el color del ícono a dorado */
     scale: 120%;
 }
 
 #list-icon {
     color: rgb(197, 197, 197);
-    font-size: 22px; /* Tamaño del ícono */
+    font-size: 22px;
+    /* Tamaño del ícono */
 }
 
 #list-icon:hover {
-    color: rgb(89, 227, 54);
-    scale:120%;
+    color: rgb(19, 166, 210);
+    scale: 120%;
 }
 
+.bottom-div {
+    color: white;
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 30%;
+}
+
+.Extras {
+    display: flex; /* Activa Flexbox para el contenedor */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    justify-content: flex-start; /* Distribuye el espacio entre los elementos */
+}
+
+.Extras > div {
+    margin: 0 10px; /* Añade un pequeño margen horizontal entre los elementos */
+}
+
+
+
+@media (max-width: 1400px) {
+    .bottom-div {
+        margin-left: 37%; /* Reducir el margen izquierdo a 20% para pantallas más grandes */
+    }
+}
 

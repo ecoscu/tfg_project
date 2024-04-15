@@ -16,6 +16,7 @@ a{
 .content-grid-flex {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .content-item-flex {
