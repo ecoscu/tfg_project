@@ -6,6 +6,8 @@ use App\Http\Requests\ContenidoRequest;
 use Illuminate\Http\Request;
 use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\Favourites;
 
 class ContentController extends Controller
 {
@@ -52,11 +54,22 @@ class ContentController extends Controller
 
         abort_unless(Auth::check(), 401);
         
+        $userID = Auth::user()->id;
         $content = Contenido::where('slug', $slug)->first();
         
+        $color = 'white';
+        
+        $checkFavorite = Favourites::where('user_id', $userID)
+            ->where('contenidos_id', $content->id)
+            ->first();
+            
+        if($checkFavorite != null){
+            $color = 'red';
+        }
+
         return view('content', [
-            'content' => $content
+            'content' => $content,
+            'color' => $color
         ]);
     }
-
 }

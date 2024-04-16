@@ -25,6 +25,7 @@
               <li><a href="#">Movies</a></li>
               <li><a href="#">TV Shows</a></li>
               <li><a href="#">Foro</a></li>
+              <li><a href="#">Perfil</a></li>
               <li>
                 <a class="hover:text-purple-900" href="{{ route('logout') }}" title="logout"
                     class="no-underline hover:underline"

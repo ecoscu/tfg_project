@@ -13,6 +13,8 @@ class FavouritesController extends Controller
     public function addFavorite($content_id)
     {
         $userID = Auth::user()->id;
+
+        $color = 'white';
         
         $existingFavorite = Favourites::where('user_id', $userID)
             ->where('contenidos_id', $content_id)
@@ -22,16 +24,19 @@ class FavouritesController extends Controller
             Favourites::where('user_id', $userID)
                 ->where('contenidos_id', $content_id)
                 ->delete();
+
         } else {
             
             $fav = new Favourites;
             $fav->user_id = $userID;
             $fav->contenidos_id = $content_id;
             $fav->save();
+
+            $color = 'red';
         }
 
         $pagContent = Contenido::where('id', $content_id)->pluck('slug')->first();
 
-        return Redirect::to('/content/' . $pagContent);
+        return Redirect::to('/content/' . $pagContent)->with('color', $color);
     }
 }

@@ -49,16 +49,13 @@ body {
     justify-content: space-evenly;
 }
 
-
-#star-icon {
+.rate {
     color: rgb(197, 197, 197);
     font-size: 22px;
-    /* Tamaño del icono */
 }
 
 #star-icon:hover {
     color: rgb(255, 221, 0);
-    /* Cambia el color del ícono a dorado */
     scale: 120%;
 }
 
@@ -93,20 +90,37 @@ body {
 }
 
 .Extras {
-    display: flex; /* Activa Flexbox para el contenedor */
-    align-items: center; /* Alinea verticalmente los elementos al centro */
-    justify-content: flex-start; /* Distribuye el espacio entre los elementos */
+    display: flex;
+    /* Activa Flexbox para el contenedor */
+    align-items: center;
+    /* Alinea verticalmente los elementos al centro */
+    justify-content: flex-start;
+    /* Distribuye el espacio entre los elementos */
 }
 
-.Extras > div {
-    margin: 0 10px; /* Añade un pequeño margen horizontal entre los elementos */
+.Extras>div {
+    margin: 0 10px;
+    /* Añade un pequeño margen horizontal entre los elementos */
 }
 
+
+.stars {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    transition: color 0.3s, transform 0.3s;
+    display: none;
+    justify-content: center;
+}
+
+.stars i.active,
+.stars i:hover {
+    color: yellow;
+    transform: scale(1.2);
+}
 
 
 @media (max-width: 1400px) {
     .bottom-div {
-        margin-left: 37%; /* Reducir el margen izquierdo a 20% para pantallas más grandes */
+        margin-left: 37%;
     }
 }
-
