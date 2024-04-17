@@ -11,12 +11,15 @@ a{
 .title1{
     color: white;
     margin: 20px;
+    padding-top: 20px ;
 }
 
 .content-grid-flex {
+    margin-left: 20px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .content-item-flex {
@@ -46,10 +49,6 @@ a{
     font-weight: bold;
 }
 
-
 .content-item-flex:hover{
     scale: 105%;
 }
-
-
-

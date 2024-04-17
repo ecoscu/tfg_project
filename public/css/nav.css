@@ -35,6 +35,48 @@ nav ul li a:hover {
     display: none;
 }
 
+.nav_ico{
+    margin-right: 7px;
+}
+
+.menu{
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .menu{
+        display: block;
+    }
+
+    .nav_ico {
+        display: none; /* Optional: hide icons on smaller screens */
+    }
+
+    .toggle-button {
+        display: block;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none; /* Hide the navbar items initially */
+        padding-bottom: 10px;
+    }
+
+    nav ul.active {
+        display: flex; /* Display navbar when active */
+    }
+}
+
+
+
 
 /* .footer {
     

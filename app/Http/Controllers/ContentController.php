@@ -72,4 +72,32 @@ class ContentController extends Controller
             'color' => $color
         ]);
     }
+    
+    public function movies(){
+        abort_unless(Auth::check(), 401);
+        $contents = Contenido::where('Type','Movie')->get();
+
+        foreach ($contents as $content) {
+            // Convierte la imagen a base64
+            if ($content->Img != null) {
+                $content->base64Img = base64_encode($content->Img);
+            }
+        }
+
+        return view('home', ['contents' => $contents]);
+    }
+
+    public function series(){
+        abort_unless(Auth::check(), 401);
+        $contents = Contenido::where('Type','Series')->get();
+
+        foreach ($contents as $content) {
+            // Convierte la imagen a base64
+            if ($content->Img != null) {
+                $content->base64Img = base64_encode($content->Img);
+            }
+        }
+
+        return view('home', ['contents' => $contents]);
+    }
 }

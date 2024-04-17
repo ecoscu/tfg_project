@@ -39,8 +39,6 @@
             </div>
         @endforeach
     </div>
-
-    <a href="{{ route('createcontent') }}" class="btn btn-primary">Añadir Contenido</a>
 @endsection
 
 
