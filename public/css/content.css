@@ -62,12 +62,20 @@ body {
 #heart-icon {
     color: rgb(197, 197, 197);
     font-size: 22px;
-    /* Tamaño del ícono */
 }
 
 #heart-icon:hover {
     color: rgb(255, 0, 0);
-    /* Cambia el color del ícono a dorado */
+    scale: 120%;
+}
+
+#eye-icon{
+    color: rgb(197, 197, 197);
+    font-size: 24px;
+}
+
+#eye-icon:hover {
+    color: rgb(109, 232, 71);
     scale: 120%;
 }
 
