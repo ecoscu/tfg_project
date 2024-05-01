@@ -23,13 +23,13 @@
             @endif
 
             @if ($colorW == 'white')
-            <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
-                <i class="far fa-eye" id="eye-icon"></i>
-            </a>
+                <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
+                    <i class="far fa-eye" id="eye-icon"></i>
+                </a>
             @else
-            <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
-                <i class="far fa-eye" id="eye-icon" style="color:{{ $colorW }};"></i>
-            </a>
+                <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
+                    <i class="far fa-eye" id="eye-icon" style="color:{{ $colorW }};"></i>
+                </a>
             @endif
 
             <i class="fas fa-list" id="list-icon"></i>
@@ -60,6 +60,7 @@
 @endsection
 
 <script>
+    
     const stars = document.querySelectorAll('.stars i');
 
     stars.forEach((star, index) => {

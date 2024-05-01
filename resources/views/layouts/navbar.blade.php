@@ -57,6 +57,21 @@
     document.querySelector('.toggle-button').addEventListener('click', function() {
         document.querySelector('nav ul').classList.toggle('active');
     });
+
+    
+    const toggleButton = document.querySelector('.toggle-button');
+    const contentImg = document.querySelector('.content-img');
+
+    toggleButton.addEventListener('click', function() {
+        
+        toggleButton.classList.toggle('active');
+
+        if (toggleButton.classList.contains('active')) {
+            contentImg.style.top = '610px';
+        } else {
+            contentImg.style.top = ''; 
+        }
+    });
 </script>
 
 </html>

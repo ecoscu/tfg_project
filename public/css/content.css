@@ -28,13 +28,9 @@ body {
 
 .content-image {
     width: 90%;
-    /* Ajusta el ancho de la imagen al 100% del div .content-img */
     height: auto;
-    /* Permite que la altura de la imagen se ajuste automáticamente */
     border-radius: 5px;
-    /* Agrega bordes redondeados a la imagen */
     object-fit: cover;
-    /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
 }
 
 .fecha {
@@ -69,7 +65,7 @@ body {
     scale: 120%;
 }
 
-#eye-icon{
+#eye-icon {
     color: rgb(197, 197, 197);
     font-size: 24px;
 }
@@ -132,3 +128,15 @@ body {
         margin-left: 37%;
     }
 }
+
+/* @media (max-width: 600px) {
+    .content-img {
+        top: 610px;
+    }
+} */
+
+/* @media (max-width: 600px) {
+    nav ul.active ~ .content-img {
+        top: 610px;
+    }
+} */

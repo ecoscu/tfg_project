@@ -24,7 +24,9 @@ class ContentController extends Controller
             }
         }
 
-        return view('home', ['contents' => $contents]);
+        $title = 'All';
+
+        return view('home',  ['title' => $title, 'contents' => $contents]);
     }
 
     public function store(ContenidoRequest $request)
@@ -97,7 +99,9 @@ class ContentController extends Controller
             }
         }
 
-        return view('home', ['contents' => $contents]);
+        $title = 'Movies';
+
+        return view('home',  ['title' => $title, 'contents' => $contents]);
     }
 
     public function series(){
@@ -111,7 +115,9 @@ class ContentController extends Controller
             }
         }
 
-        return view('home', ['contents' => $contents]);
+        $title = 'Tv Shows';
+
+        return view('home',  ['title' => $title, 'contents' => $contents]);
     }
 
     public function buscar(Request $request)
@@ -126,6 +132,8 @@ class ContentController extends Controller
             }
         }
 
-        return view('home', compact('contents'));
+        $title = 'Resultados de Busqueda ...';
+
+        return view('home', compact('contents','title'));
     }
 }

@@ -1,21 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/home.css">
-    <title>Home</title>
-</head>
-
-<body> 
-    
-</body>
-
-</html> --}}
-
-
 @extends('..layouts.navbar')
 
 @section('content')
@@ -26,7 +8,8 @@
         <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
     </form>
 
-    <h3 class="title1">ALL</h3>
+
+    <h3 class="title1">{{ $title }}</h3>
     <div class="content-grid-flex">
         @foreach ($contents as $content)
             <div class="content-item-flex">
