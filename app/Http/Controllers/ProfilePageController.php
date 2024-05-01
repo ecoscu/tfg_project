@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContenidoRequest;
+use App\Models\Watched;
 use Illuminate\Http\Request;
 use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ class ProfilePageController extends Controller
         if ($favourites->isNotEmpty()) {
             $favouriteContent = Contenido::whereIn('id', $favourites)->get();
         } else {
-            $favouriteContent = collect(); 
+            $favouriteContent = collect();
         }
 
         foreach ($favouriteContent as $content) {
@@ -32,7 +33,26 @@ class ProfilePageController extends Controller
             }
         }
 
-        return view('profile', ['favourites' => $favouriteContent]);
+        $watched = Watched::where('user_id', $userID)->pluck('contenidos_id');
+
+        if ($watched->isNotEmpty()) {
+            $watchedContent = Contenido::whereIn('id', $watched)->get();
+        } else {
+            $watchedContent = collect();
+        }
+
+        foreach ($watchedContent as $content) {
+            // Convierte la imagen a base64
+            if ($content->Img != null) {
+                $content->base64Img = base64_encode($content->Img);
+            }
+        }
+
+        return view(
+            'profile',
+            ['favourites' => $favouriteContent],
+            ['watched' => $watchedContent]
+        );
     }
 
 }

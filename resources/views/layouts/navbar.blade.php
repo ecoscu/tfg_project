@@ -22,16 +22,19 @@
                 <i class="fas fa-bars toggle-button"></i>
             </div>
             <ul>
-                <li><a href={{ route('dashboard') }}><i class="fas fa-home nav_ico"></i> Home</a></li>
+                <li><a href={{ route('dashboard') }}><i class="fas fa-home nav_ico"></i></a></li>
                 <li><a href={{ route('content.movies') }}><i class="fas fa-film nav_ico"></i>Movies</a></li>
                 <li><a href={{ route('content.series') }}><i class="fas fa-tv nav_ico"></i>TV Shows</a></li>
                 <li><a href="#"><i class="fas fa-rocket nav_ico"></i> Foro</a></li>
-                <li><a href={{ route('profile.page') }}><i class="fas fa-user-alt nav_ico"></i>Perfil</a></li>
-                <li>
-                    @if (Auth::user()->name == 'admin')
+                <li><a href={{ route('profile.page') }}><i class="fas fa-user-alt nav_ico"></i></a></li>
+
+                @if (Auth::user()->name == 'admin')
+                    <li>
                         <a href={{ route('createcontent') }}>Añadir Contenido</a>
-                    @endif
-                </li>
+                    </li>
+                @endif
+                
+
                 <li>
                     <a class="hover:text-purple-900" href="{{ route('logout') }}" title="logout"
                         class="no-underline hover:underline"

@@ -8,6 +8,26 @@ a{
     color: rgb(255, 255, 255);
 }
 
+.search{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.search-input{
+    background-color:rgb(60, 60, 60);
+    width: 300px;
+    border-radius: 25px;
+    color: white;
+}
+
+.search-button{
+    border-radius: 10px;
+}
+
+.search-button:hover{
+    scale: 105%;
+}
+
 .title1{
     color: white;
     margin: 20px;

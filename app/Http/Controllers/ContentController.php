@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContenidoRequest;
+use App\Models\Watched;
 use Illuminate\Http\Request;
 use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
@@ -48,6 +49,8 @@ class ContentController extends Controller
         } else {
             return "No se ha enviado ninguna imagen.";
         }
+
+        return $this->show();
     }
 
     public function slug($slug){
@@ -57,19 +60,29 @@ class ContentController extends Controller
         $userID = Auth::user()->id;
         $content = Contenido::where('slug', $slug)->first();
         
-        $color = 'white';
+        $colorF = 'white';
+        $colorW = 'white';
         
         $checkFavorite = Favourites::where('user_id', $userID)
             ->where('contenidos_id', $content->id)
             ->first();
             
         if($checkFavorite != null){
-            $color = 'red';
+            $colorF = 'red';
+        }
+
+        $checkWatched = Watched::where('user_id', $userID)
+            ->where('contenidos_id', $content->id)
+            ->first();
+            
+        if($checkWatched != null){
+            $colorW = '#6DE851';
         }
 
         return view('content', [
             'content' => $content,
-            'color' => $color
+            'colorF' => $colorF,
+            'colorW' => $colorW
         ]);
     }
     
@@ -99,5 +112,20 @@ class ContentController extends Controller
         }
 
         return view('home', ['contents' => $contents]);
+    }
+
+    public function buscar(Request $request)
+    {
+        $query = $request->input('query');
+        $contents = Contenido::where('name', 'like', '%' . $query . '%')->get();
+
+        foreach ($contents as $content) {
+            // Convierte la imagen a base64
+            if ($content->Img != null) {
+                $content->base64Img = base64_encode($content->Img);
+            }
+        }
+
+        return view('home', compact('contents'));
     }
 }

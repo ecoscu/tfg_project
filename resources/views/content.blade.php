@@ -12,16 +12,26 @@
         <p class="fecha">{{ $content->ReleaseDate }}</p>
         <div class="options">
             <i class="far fa-star rate" id="star-icon" onclick="showrate();"></i>
-            @if ($color == 'white')
+            @if ($colorF == 'white')
                 <a href="{{ route('toggle.favorite', ['content_id' => $content->id]) }}">
                     <i class="far fa-heart" id="heart-icon"></i>
                 </a>
             @else
                 <a href="{{ route('toggle.favorite', ['content_id' => $content->id]) }}">
-                    <i class="far fa-heart" id="heart-icon" style="color:{{ $color }};"></i>
+                    <i class="far fa-heart" id="heart-icon" style="color:{{ $colorF }};"></i>
                 </a>
             @endif
-            <i class="far fa-eye" id="eye-icon"></i>
+
+            @if ($colorW == 'white')
+            <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
+                <i class="far fa-eye" id="eye-icon"></i>
+            </a>
+            @else
+            <a href="{{ route('toggle.watched', ['content_id' => $content->id]) }}">
+                <i class="far fa-eye" id="eye-icon" style="color:{{ $colorW }};"></i>
+            </a>
+            @endif
+
             <i class="fas fa-list" id="list-icon"></i>
         </div>
         <br>

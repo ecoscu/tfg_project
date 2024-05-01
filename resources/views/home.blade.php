@@ -19,7 +19,13 @@
 @extends('..layouts.navbar')
 
 @section('content')
-<link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <form action="{{ route('buscar') }}" method="GET" class="search">
+        <input type="text" name="query" placeholder="Buscar..." class="search-input">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </form>
+
     <h3 class="title1">ALL</h3>
     <div class="content-grid-flex">
         @foreach ($contents as $content)

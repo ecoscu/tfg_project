@@ -23,14 +23,16 @@ a{
 }
 
 .content-item-flex {
-    width: 265px!important;
+    /* width: 265px!important; */
+    width: 200px;
     margin-bottom: 5px;
     text-align: center; /* Centra el contenido horizontalmente */
 }
 
 .content-image {
     width: 90%; 
-    height: 370px; 
+    /* height: 370px;  */
+    height: 270px;
     border-radius: 5px;
     display: inline-block; 
     object-fit: cover; 
@@ -51,4 +53,8 @@ a{
 
 .content-item-flex:hover{
     scale: 105%;
+}
+
+hr{
+    color: white;
 }

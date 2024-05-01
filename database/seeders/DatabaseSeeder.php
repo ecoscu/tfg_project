@@ -22,6 +22,17 @@ class DatabaseSeeder extends Seeder
         $imagenGOT = file_get_contents($imggot);
         $imgconjuring = public_path('img/Conjuring.jpg');
         $imagenConj = file_get_contents($imgconjuring);
+        $imgahs = public_path('img/ahs.png');
+        $imagenahs = file_get_contents($imgahs);
+        $imghg = public_path('img/hunger-games.jpg');
+        $imagenhg = file_get_contents($imghg);
+
+        $imgt100 = public_path('img/The_100.jpg');
+        $imagent100 = file_get_contents($imgt100);
+        $imgpapel = public_path('img/la_casa_de_papel.jpg');
+        $imagentpapel = file_get_contents($imgpapel);
+        $imgstranger = public_path('img/stanger.jpg');
+        $imagenstranger = file_get_contents($imgstranger);
         
         User::create([
             'name' => 'admin',
@@ -75,6 +86,66 @@ class DatabaseSeeder extends Seeder
             'ReleaseDate' => '2013-10-18',
             'Platform' => 'PrimeVideo',
             'Rating' => '7.8'
+        ]);
+
+        Contenido::create([
+            'name' => 'The Hunger Games',
+            'slug' => 'the-hunger-games',
+            'Img' => $imagenhg,
+            'Sinopsis' => 'Se sitúa en un mundo ficticio con elementos fantásticos, como dragones y poderes, pero también otros muy reales como son las luchas de poder, los enfrentamientos políticos, las traiciones y la continua guerra por el trono que gobierna los siete reinos de Poniente.',
+            'Type' => 'Movie',
+            'Genre' => 'Drama',
+            'ReleaseDate' => '2011-04-17',
+            'Platform' => 'HBO',
+            'Rating' => '9.6'
+        ]);
+
+        Contenido::create([
+            'name' => 'Stranger Things',
+            'slug' => 'stranger-things',
+            'Img' => $imagenstranger,
+            'Sinopsis' => 'Se sitúa en un mundo ficticio con elementos fantásticos, como dragones y poderes, pero también otros muy reales como son las luchas de poder, los enfrentamientos políticos, las traiciones y la continua guerra por el trono que gobierna los siete reinos de Poniente.',
+            'Type' => 'Series',
+            'Genre' => 'Drama',
+            'ReleaseDate' => '2011-04-17',
+            'Platform' => 'HBO',
+            'Rating' => '9.6'
+        ]);
+
+        Contenido::create([
+            'name' => 'The 100',
+            'slug' => 'the-100',
+            'Img' => $imagent100,
+            'Sinopsis' => 'Se sitúa en un mundo ficticio con elementos fantásticos, como dragones y poderes, pero también otros muy reales como son las luchas de poder, los enfrentamientos políticos, las traiciones y la continua guerra por el trono que gobierna los siete reinos de Poniente.',
+            'Type' => 'Series',
+            'Genre' => 'Drama',
+            'ReleaseDate' => '2011-04-17',
+            'Platform' => 'HBO',
+            'Rating' => '9.6'
+        ]);
+
+        Contenido::create([
+            'name' => 'La Casa De Papel',
+            'slug' => 'la-casa-de-papel',
+            'Img' => $imagentpapel,
+            'Sinopsis' => 'Se sitúa en un mundo ficticio con elementos fantásticos, como dragones y poderes, pero también otros muy reales como son las luchas de poder, los enfrentamientos políticos, las traiciones y la continua guerra por el trono que gobierna los siete reinos de Poniente.',
+            'Type' => 'Series',
+            'Genre' => 'Drama',
+            'ReleaseDate' => '2011-04-17',
+            'Platform' => 'HBO',
+            'Rating' => '9.6'
+        ]);
+
+        Contenido::create([
+            'name' => 'American Horror Story',
+            'slug' => 'game-of-thornes',
+            'Img' => $imagenahs,
+            'Sinopsis' => 'Se sitúa en un mundo ficticio con elementos fantásticos, como dragones y poderes, pero también otros muy reales como son las luchas de poder, los enfrentamientos políticos, las traiciones y la continua guerra por el trono que gobierna los siete reinos de Poniente.',
+            'Type' => 'Series',
+            'Genre' => 'Horror',
+            'ReleaseDate' => '2011-04-17',
+            'Platform' => 'HBO',
+            'Rating' => '9.6'
         ]);
     }
 }

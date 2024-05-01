@@ -35,12 +35,16 @@ Route::post('/CreateContent', [\App\Http\Controllers\ContentController::class, '
 
 Route::get('/toggle-favorite/{content_id}', [\App\Http\Controllers\FavouritesController::class, 'addFavorite'])->name('toggle.favorite');
 
+Route::get('/toggle-watched/{content_id}', [\App\Http\Controllers\WatchedController::class, 'addWatched'])->name('toggle.watched');
+
+
 Route::get('/profile-page', [\App\Http\Controllers\ProfilePageController::class, 'profilepage'])->name('profile.page');
 
 Route::get('/home-movies', [\App\Http\Controllers\ContentController::class, 'movies'])->name('content.movies');
 
 Route::get('/home-series', [\App\Http\Controllers\ContentController::class, 'series'])->name('content.series');
 
+Route::get('/buscar', [\App\Http\Controllers\ContentController::class, 'buscar'])->name('buscar');
 
 
 // Route::get('/dashboard', function () {
