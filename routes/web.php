@@ -46,6 +46,7 @@ Route::get('/home-series', [\App\Http\Controllers\ContentController::class, 'ser
 
 Route::get('/buscar', [\App\Http\Controllers\ContentController::class, 'buscar'])->name('buscar');
 
+Route::post('/comment', [\App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

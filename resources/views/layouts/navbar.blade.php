@@ -33,7 +33,6 @@
                         <a href={{ route('createcontent') }}>Añadir Contenido</a>
                     </li>
                 @endif
-                
 
                 <li>
                     <a class="hover:text-purple-900" href="{{ route('logout') }}" title="logout"
@@ -58,20 +57,51 @@
         document.querySelector('nav ul').classList.toggle('active');
     });
 
-    
+
     const toggleButton = document.querySelector('.toggle-button');
     const contentImg = document.querySelector('.content-img');
+    const bottomdiv = document.querySelector('.bottom-div');
 
     toggleButton.addEventListener('click', function() {
-        
+
+        const windowWidth = window.innerWidth;
+
         toggleButton.classList.toggle('active');
 
         if (toggleButton.classList.contains('active')) {
-            contentImg.style.top = '610px';
-        } else {
-            contentImg.style.top = ''; 
+            contentImg.style.top = '550px';
+            bottomdiv.style.marginTop = '300px';
+            
+        } else{
+            contentImg.style.top = '';
+            bottomdiv.style.marginTop = '';
         }
     });
+
+    // window.addEventListener('resize', function() {
+    //     // Obtener el ancho de la ventana
+    //     const windowWidth = window.innerWidth;
+
+    //     // Verificar si el botón está activo y el ancho de la ventana es mayor a 600px
+    //     if (toggleButton.classList.contains('active') && windowWidth > 600) {
+    //         // Desactivar el botón
+    //         toggleButton.classList.remove('active');
+
+    //         // document.querySelector('nav ul').classList.toggle('off');
+            
+    //         // Restablecer estilos
+    //         contentImg.style.top = '';
+    //         bottomdiv.style.marginTop = '';
+    //     }
+
+    //     if (toggleButton.classList.contains('off') && windowWidth > 600) {
+    //         toggleButton.classList.toggle('active');
+
+    //         contentImg.style.top = '550px';
+    //         bottomdiv.style.marginTop = '300px';
+    //     }
+    // });
+
 </script>
 
 </html>

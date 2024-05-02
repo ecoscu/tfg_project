@@ -9,6 +9,8 @@ use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Favourites;
+use App\Models\Comment;
+
 
 class ContentController extends Controller
 {
@@ -81,10 +83,13 @@ class ContentController extends Controller
             $colorW = '#6DE851';
         }
 
+        $comments = Comment::where('contenidos_id', $content->id)->get();
+
         return view('content', [
             'content' => $content,
             'colorF' => $colorF,
-            'colorW' => $colorW
+            'colorW' => $colorW,
+            'comments' => $comments
         ]);
     }
     
@@ -132,7 +137,7 @@ class ContentController extends Controller
             }
         }
 
-        $title = 'Resultados de Busqueda ...';
+        $title = 'Resultados de la Busqueda "'  .$query.  '" ';
 
         return view('home', compact('contents','title'));
     }

@@ -5,6 +5,7 @@ nav {
     width: 100%;
     z-index: 1000;
     margin-top: 0; /* Elimina el margen superior */
+    border-bottom: #ff0000 1px solid;
 }
 
 nav ul {
@@ -70,11 +71,18 @@ nav ul li a:hover {
         padding-bottom: 10px;
     }
 
-    nav ul.active {
+    ul.active {
         display: flex; /* Display navbar when active */
+    }
+
+    ul.off {
+        display: none; /* Display navbar when active */
     }
 }
 
+@media (min-width: 600px) {
+
+}
 
 
 

@@ -11,22 +11,26 @@
 
     <h3 class="title1">{{ $title }}</h3>
     <div class="content-grid-flex">
-        @foreach ($contents as $content)
-            <div class="content-item-flex">
-                <article>
-                    <a href="{{ route('slug', $content->slug) }}">
-                        <img class="content-image" src="data:image/jpeg;base64,{{ $content->base64Img }}"
-                            alt="{{ $content->name }}">
-                        <div class="content-details">
-                            <div class="content-info">
-                                <div class="content-name">{{ $content->name }}</div>
-                                <div class="content-date">{{ $content->ReleaseDate }}</div>
+        @if ($contents->isEmpty())
+            <p class="not-found">Lo sentimos no hemos encontrado contenidos con ese titulo.</p>
+        @else
+            @foreach ($contents as $content)
+                <div class="content-item-flex">
+                    <article>
+                        <a href="{{ route('slug', $content->slug) }}">
+                            <img class="content-image" src="data:image/jpeg;base64,{{ $content->base64Img }}"
+                                alt="{{ $content->name }}">
+                            <div class="content-details">
+                                <div class="content-info">
+                                    <div class="content-name">{{ $content->name }}</div>
+                                    <div class="content-date">{{ $content->ReleaseDate }}</div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-        @endforeach
+                        </a>
+                    </article>
+                </div>
+            @endforeach
+        @endif
     </div>
 @endsection
 

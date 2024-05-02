@@ -16,7 +16,7 @@ a{
 .search-input{
     background-color:rgb(60, 60, 60);
     width: 300px;
-    border-radius: 25px;
+    border-radius: 10px;
     color: white;
 }
 
@@ -31,6 +31,7 @@ a{
 .title1{
     color: white;
     margin: 20px;
+    margin-left: 100px;
 }
 
 .content-grid-flex {
@@ -74,5 +75,9 @@ a{
     scale: 102%;
 }
 
-
+.not-found{
+    color: white;
+    font-size: 20px;
+    margin-top: 150px;
+}
 

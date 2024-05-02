@@ -32,6 +32,8 @@
                 </a>
             @endif
 
+            <i class="far fa-clock" id="pending-icon"></i>
+
             <i class="fas fa-list" id="list-icon"></i>
         </div>
         <br>
@@ -49,18 +51,55 @@
         <h1>{{ $content->name }}</h1>
         <p>{{ $content->Sinopsis }}</p>
         <div class="Extras">
-            <div>
-                Genere:
+            <div class="genere">
+                <p>Genere:</p>
+                <p class="ex-tag">{{ $content->Genre }}</p>
             </div>
+            <div class="platform">
+                <p>Platform:</p>
+                <p class="ex-tag">{{ $content->Platform }}</p>
+            </div>
+        </div>
+
+        <div class="comment-section">
+            @guest
+            @else
+                <hr>
+                <h4>COMMENTS</h4>
+                <form action="{{ route('comments.store') }}" method="post">
+                    @csrf
+                    <textarea class="comment-box" name="comment" placeholder="Write your comment..." required></textarea>
+                    <input type="hidden" name="contenidos_id" value="{{ $content->id }}">
+                    <div class="submit-comment">
+                        <input type="submit" value="Publicar" class="summit-comment">
+                    </div>
+                </form>
+            @endguest
+
             <div>
-                {{ $content->Genre }}
+                @foreach ($comments as $comment)
+                    <div class="comments-box">
+                        <div class="text-lg">{{ $comment->comment }}</div>
+
+                        <div class="by-box">
+                            <div><i class="far fa-heart" id="heart-icon"></i></div>
+                            <div>
+                                <div>
+                                    By {{ $comment->user->name }}
+                                </div>
+                                <div>
+                                    {{ $comment->created_at->format('j F, Y') }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
 @endsection
 
 <script>
-    
     const stars = document.querySelectorAll('.stars i');
 
     stars.forEach((star, index) => {
