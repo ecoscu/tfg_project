@@ -37,6 +37,14 @@
             <i class="fas fa-list" id="list-icon"></i>
         </div>
         <br>
+        {{-- <div class="stars" id="stars">
+            <i class="far fa-star primera" id="1"></i>
+            <i class="far fa-star segunda" id="2"></i>
+            <i class="far fa-star tercera" id="3"></i>
+            <i class="far fa-star cuarta" id="4"></i>
+            <i class="far fa-star quinta" id="5"></i>
+        </div> --}}
+
         <div class="stars" id="stars">
             <i class="far fa-star primera" id="1"></i>
             <i class="far fa-star segunda" id="2"></i>
@@ -44,6 +52,8 @@
             <i class="far fa-star cuarta" id="4"></i>
             <i class="far fa-star quinta" id="5"></i>
         </div>
+
+
 
     </div>
 
@@ -103,6 +113,7 @@
     const stars = document.querySelectorAll('.stars i');
 
     stars.forEach((star, index) => {
+
         star.addEventListener('mouseover', () => {
             // Iluminar todas las estrellas hasta el índice actual incluyendo la actual
             for (let i = 0; i <= index; i++) {
@@ -111,7 +122,6 @@
         });
 
         star.addEventListener('mouseout', () => {
-            // Desiluminar todas las estrellas
             stars.forEach(star => {
                 star.classList.remove('active');
             });
@@ -122,12 +132,15 @@
         var stars = document.querySelectorAll('.stars');
         stars.forEach(star => {
             if (star.style.display === 'none' || star.style.display === '') {
-                star.style.display = 'flex'; // Asume que si está vacío, es porque CSS tiene display: none
+                star.style.display = 'flex';
+
             } else {
-                star.style.display = 'none'; // Para alternar el estado
+                star.style.display = 'none';
             }
         });
     }
+
+    
 
     document.addEventListener('DOMContentLoaded', function() {
         const stars = document.querySelectorAll('.stars i');
@@ -137,6 +150,8 @@
                 for (let i = 0; i <= index; i++) {
                     stars[i].classList.add('active');
                 }
+
+
             });
 
             star.addEventListener('mouseout', () => {

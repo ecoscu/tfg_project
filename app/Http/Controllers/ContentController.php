@@ -17,7 +17,7 @@ class ContentController extends Controller
     public function show()
     {
         abort_unless(Auth::check(), 401);
-        $contents = Contenido::get();
+        $contents = Contenido::orderBy('name', 'ASC')->get();
 
         foreach ($contents as $content) {
             // Convierte la imagen a base64
@@ -95,7 +95,7 @@ class ContentController extends Controller
     
     public function movies(){
         abort_unless(Auth::check(), 401);
-        $contents = Contenido::where('Type','Movie')->get();
+        $contents = Contenido::where('Type','Movie')->orderBy('name', 'ASC')->get();
 
         foreach ($contents as $content) {
             // Convierte la imagen a base64
@@ -111,7 +111,7 @@ class ContentController extends Controller
 
     public function series(){
         abort_unless(Auth::check(), 401);
-        $contents = Contenido::where('Type','Series')->get();
+        $contents = Contenido::where('Type','Series')->orderBy('name', 'ASC')->get();
 
         foreach ($contents as $content) {
             // Convierte la imagen a base64

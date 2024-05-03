@@ -192,3 +192,9 @@ body {
 .comments-box {
     color: white;
 }
+
+.star-label input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}

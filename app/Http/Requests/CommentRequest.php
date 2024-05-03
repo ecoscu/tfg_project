@@ -26,7 +26,7 @@ class CommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'comment' => 'required|max:450',
+            'comment' => 'required|max:250',
             'contenidos_id' => 'exists:App\Models\Contenido,id',
         ];
     }
@@ -40,8 +40,8 @@ class CommentRequest extends FormRequest
     {
         return [
             'comment.required' => 'A comment is required',
-            'comment.max' => 'A comment cannot exceed 1000 characters',
-            'post_id.exists' => 'You must sent a valid post'
+            'comment.max' => 'A comment cannot exceed 250 characters',
+            'contenidos_id.exists' => 'You must sent a valid post'
         ];
     }
 }
