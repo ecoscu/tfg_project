@@ -103,12 +103,23 @@ body {
     margin-left: 30%;
 }
 
+.but-star{
+    background-color: unset;
+    border: none;
+    color: white;
+}
+
 .stars {
     color: rgb(255, 255, 255);
     font-size: 22px;
     transition: color 0.3s, transform 0.3s;
     display: none;
     justify-content: center;
+}
+
+.stars i{
+    margin-right: 4px;
+    margin-left: 4px;
 }
 
 .stars i.active,
@@ -127,13 +138,18 @@ body {
 @media (max-width: 600px) {
     .content-img{
         left: 35%;
-        scale: 120%;
+        scale: 110%;
     }
 
     .bottom-div {
         width: 80%;
         margin-left: 0;
-        margin: 200px auto 0;
+        margin: 255px auto 0;
+    }
+
+    .stars i{
+        margin-right: 1px;
+        margin-left: 1px;
     }
 
     

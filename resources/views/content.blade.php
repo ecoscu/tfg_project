@@ -33,27 +33,19 @@
             @endif
 
             <i class="far fa-clock" id="pending-icon"></i>
-
-            <i class="fas fa-list" id="list-icon"></i>
+            <a href="{{ route('createlist') }}">
+                <i class="fas fa-list" id="list-icon"></i>
+            </a>
         </div>
         <br>
-        {{-- <div class="stars" id="stars">
-            <i class="far fa-star primera" id="1"></i>
-            <i class="far fa-star segunda" id="2"></i>
-            <i class="far fa-star tercera" id="3"></i>
-            <i class="far fa-star cuarta" id="4"></i>
-            <i class="far fa-star quinta" id="5"></i>
-        </div> --}}
 
         <div class="stars" id="stars">
-            <i class="far fa-star primera" id="1"></i>
-            <i class="far fa-star segunda" id="2"></i>
-            <i class="far fa-star tercera" id="3"></i>
-            <i class="far fa-star cuarta" id="4"></i>
-            <i class="far fa-star quinta" id="5"></i>
+            <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
+            <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
+            <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
+            <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+            <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
         </div>
-
-
 
     </div>
 
@@ -140,7 +132,7 @@
         });
     }
 
-    
+
 
     document.addEventListener('DOMContentLoaded', function() {
         const stars = document.querySelectorAll('.stars i');
