@@ -33,12 +33,9 @@
             @endif
 
             <i class="far fa-clock" id="pending-icon"></i>
-            <a href="{{ route('createlist') }}">
-                <i class="fas fa-list" id="list-icon"></i>
-            </a>
-        </div>
-        <br>
 
+            <i class="fas fa-list" id="list-icon" onclick="showlists();"></i>
+        </div>
         <div class="stars" id="stars">
             <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
             <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
@@ -47,7 +44,18 @@
             <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
         </div>
 
+        <div class="pop-lists">
+            <div class="create-list">
+                <a href="{{ route('createlist') }}"><i class="fas fa-plus count" id="new-list-icon"></i>Nueva lista</a>
+            </div>
+            @foreach ($lists as $list)
+                <div class="create-list">
+                    <a href="">{{ $list->name }}</a>
+                </div>
+            @endforeach
+        </div>
     </div>
+    <br>
 
     <div class="bottom-div">
         <h1>{{ $content->name }}</h1>
@@ -128,6 +136,17 @@
 
             } else {
                 star.style.display = 'none';
+            }
+        });
+    }
+
+    function showlists() {
+        var lists = document.querySelectorAll('.pop-lists');
+        lists.forEach(list => {
+            if (list.style.display === 'none' || list.style.display === '') {
+                list.style.display = 'flex';
+            } else {
+                list.style.display = 'none';
             }
         });
     }

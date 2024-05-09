@@ -4,13 +4,16 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1000;
-    margin-top: 0; /* Elimina el margen superior */
+    margin-top: 0;
+    /* Elimina el margen superior */
     border-bottom: #ff0000 1px solid;
 }
 
+
 nav ul {
     list-style-type: none;
-    margin: 0; /* Establece todos los márgenes a 0 */
+    margin: 0;
+    /* Establece todos los márgenes a 0 */
     padding: 0;
     text-align: center;
 }
@@ -24,34 +27,37 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    line-height: 50px; /* Ajusta este valor según sea necesario para centrar verticalmente el texto */
-    height: 50px; /* Ajusta este valor según sea necesario para centrar verticalmente el texto */
+    line-height: 50px;
+    /* Ajusta este valor según sea necesario para centrar verticalmente el texto */
+    height: 50px;
+    /* Ajusta este valor según sea necesario para centrar verticalmente el texto */
 }
 
 nav ul li a:hover {
     color: #ff0000;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.nav_ico{
+.nav_ico {
     margin-right: 7px;
 }
 
-.menu{
+.menu {
     display: none;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-    .menu{
+    .menu {
         display: block;
     }
 
     .nav_ico {
-        display: none; /* Optional: hide icons on smaller screens */
+        display: none;
+        /* Optional: hide icons on smaller screens */
     }
 
     .toggle-button {
@@ -67,22 +73,23 @@ nav ul li a:hover {
     nav ul {
         flex-direction: column;
         width: 100%;
-        display: none; /* Hide the navbar items initially */
+        display: none;
+        /* Hide the navbar items initially */
         padding-bottom: 10px;
     }
 
     ul.active {
-        display: flex; /* Display navbar when active */
+        display: flex;
+        /* Display navbar when active */
     }
 
     ul.off {
-        display: none; /* Display navbar when active */
+        display: none;
+        /* Display navbar when active */
     }
 }
 
-@media (min-width: 600px) {
-
-}
+@media (min-width: 600px) {}
 
 
 
@@ -101,5 +108,3 @@ nav ul li a:hover {
     font-size: 18px;  
     font-weight: bold; 
 } */
-
-

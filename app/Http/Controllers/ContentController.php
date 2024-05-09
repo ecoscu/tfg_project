@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Favourites;
 use App\Models\Comment;
+use App\Models\Lists;
 
 
 class ContentController extends Controller
@@ -80,16 +81,19 @@ class ContentController extends Controller
             ->first();
             
         if($checkWatched != null){
-            $colorW = '#6DE851';
+            $colorW = '#4DC4D9';
         }
 
         $comments = Comment::where('contenidos_id', $content->id)->get();
+
+        $lists = Lists::where('user_id', $userID)->get();
 
         return view('content', [
             'content' => $content,
             'colorF' => $colorF,
             'colorW' => $colorW,
-            'comments' => $comments
+            'comments' => $comments,
+            'lists' => $lists
         ]);
     }
     
