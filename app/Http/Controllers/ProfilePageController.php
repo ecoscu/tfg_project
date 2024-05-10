@@ -9,6 +9,7 @@ use App\Models\Contenido;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Favourites;
+use App\Models\Lists;
 
 class ProfilePageController extends Controller
 {
@@ -48,10 +49,14 @@ class ProfilePageController extends Controller
             }
         }
 
+        $lists = Lists::where('user_id', $userID)->get();
+
         return view(
             'profile',
-            ['favourites' => $favouriteContent],
-            ['watched' => $watchedContent]
+            ['favourites' => $favouriteContent, 
+            'watched' => $watchedContent, 
+            'lists' => $lists]
+            
         );
     }
 

@@ -46,7 +46,10 @@
 
         <div class="pop-lists">
             <div class="create-list">
-                <a href="{{ route('createlist') }}"><i class="fas fa-plus count" id="new-list-icon"></i>Nueva lista</a>
+                <a href="{{ route('createlist') }}">
+                    <i class="fas fa-plus count" id="new-list-icon"></i>
+                    Crear lista
+                </a>
             </div>
             @foreach ($lists as $list)
                 <div class="create-list">
