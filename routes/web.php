@@ -48,6 +48,11 @@ Route::get('/buscar', [\App\Http\Controllers\ContentController::class, 'buscar']
 
 Route::post('/comment', [\App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');
 
+Route::post('/filter/{filter}', [\App\Http\Controllers\ContentController::class, 'filter'])->name('filter');
+
+Route::post('/rate/{content_id}/{rate}', [\App\Http\Controllers\ContentController::class, 'rate'])->name('rate');
+
+
 Route::get('/CreateList',function(){
     return view('createlist');
 })->name('createlist');

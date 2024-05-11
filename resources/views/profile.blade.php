@@ -49,6 +49,9 @@
             @endforeach
         </div>
         <hr>
+        <h2 class="title1">Yet to Watch</h2>
+        <div class="content-grid-flex">
+        </div>
         <hr>
         <h2 class="title1">You Watched</h2>
         <div class="content-grid-flex">

@@ -11,7 +11,12 @@
         <img class="content-image" src="data:image/jpeg;base64,{{ base64_encode($content->Img) }}" alt="{{ $content->name }}">
         <p class="fecha">{{ $content->ReleaseDate }}</p>
         <div class="options">
-            <i class="far fa-star rate" id="star-icon" onclick="showrate();"></i>
+            @if ($colorR == 'white')
+                <i class="far fa-star rate" id="star-icon" onclick="showrate();"></i>
+            @else
+                <i class="far fa-star rate" id="star-icon" onclick="showrate();" style="color:{{ $colorR }};"></i>
+            @endif
+            
             @if ($colorF == 'white')
                 <a href="{{ route('toggle.favorite', ['content_id' => $content->id]) }}">
                     <i class="far fa-heart" id="heart-icon"></i>
@@ -37,11 +42,26 @@
             <i class="fas fa-list" id="list-icon" onclick="showlists();"></i>
         </div>
         <div class="stars" id="stars">
-            <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
-            <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
-            <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
-            <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
-            <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                @csrf
+                <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
+            </form>
+            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                @csrf
+                <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
+            </form>
+            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                @csrf
+                <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
+            </form>
+            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                @csrf
+                <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+            </form>
+            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                @csrf
+                <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+            </form>
         </div>
 
         <div class="pop-lists">
