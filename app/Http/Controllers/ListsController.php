@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Lists;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\ProfilePageController;
 
 class ListsController extends Controller
 {

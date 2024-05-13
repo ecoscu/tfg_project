@@ -49,13 +49,20 @@ nav ul li a:hover {
     display: none;
 }
 
-.nav-op{
-    height: 50px;
+.nav-op a{
+    height: 35px;
+    padding-top: 12px;
 }
 
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+
+    .nav-op{
+        display: flex;
+        justify-content: center;
+    }
+
     .menu {
         display: block;
     }

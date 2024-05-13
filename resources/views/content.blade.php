@@ -16,7 +16,7 @@
             @else
                 <i class="far fa-star rate" id="star-icon" onclick="showrate();" style="color:{{ $colorR }};"></i>
             @endif
-            
+
             @if ($colorF == 'white')
                 <a href="{{ route('toggle.favorite', ['content_id' => $content->id]) }}">
                     <i class="far fa-heart" id="heart-icon"></i>
@@ -81,7 +81,10 @@
     <br>
 
     <div class="bottom-div">
-        <h1>{{ $content->name }}</h1>
+        <div class="top-content">
+            <h1>{{ $content->name }}</h1>
+            <p class="rating">{{ $content->Rating }}/5<i class="far fa-star"></i></p>
+        </div>
         <p>{{ $content->Sinopsis }}</p>
         <div class="Extras">
             <div class="genere">

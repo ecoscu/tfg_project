@@ -50,6 +50,23 @@ body {
     font-size: 22px;
 }
 
+.rating{
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.rating > i{
+    margin-left: 10px;
+    color: yellow;
+}
+
+
+.top-content{
+    display: flex;
+    justify-content: space-between;
+}
+
 #star-icon:hover {
     color: rgb(255, 221, 0);
     scale: 120%;

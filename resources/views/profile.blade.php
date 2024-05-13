@@ -47,6 +47,7 @@
                     </article>
                 </div>
             @endforeach
+
         </div>
         <hr>
         <h2 class="title1">Yet to Watch</h2>

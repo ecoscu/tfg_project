@@ -12,6 +12,7 @@ use App\Models\Favourites;
 use App\Models\Comment;
 use App\Models\Lists;
 use App\Models\Rating;
+use App\Http\Controllers\RatingController;
 
 
 class ContentController extends Controller
@@ -95,6 +96,16 @@ class ContentController extends Controller
         $checkRating = Rating::where('user_id', $userID)->where('contenidos_id', $content->id)->first();
         if ($checkRating != null) {
             $colorR = '#F3F32D';
+        }else if ($content->Rating == '5.00') {
+            $content->Rating = '5';
+        }else if ($content->Rating == '4.00') {
+            $content->Rating = '4';
+        }else if ($content->Rating == '3.00') {
+            $content->Rating = '3';
+        }else if ($content->Rating == '2.00') {
+            $content->Rating = '2';
+        }else if ($content->Rating == '1.00') {
+            $content->Rating = '1';
         }
 
         $comments = Comment::where('contenidos_id', $content->id)->get();
@@ -214,6 +225,9 @@ class ContentController extends Controller
             $rating->rating = $rate;
             $rating->save();
         }
+
+        $media = new RatingController;
+        $media->media($content_id);
 
         $pagContent = Contenido::where('id', $content_id)->pluck('slug')->first();
 
