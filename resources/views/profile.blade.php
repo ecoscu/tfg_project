@@ -30,31 +30,57 @@
         </div>
         <hr>
         <h2 class="title1">Your Favourites</h2>
+        @if ($favourites->isEmpty())
+            <h5 class="title1">"Todavía no tienes favoritos"</h5>
+        @else
+            <div class="content-grid-flex">
+                @foreach ($favourites as $favorite)
+                    <div class="content-item-flex">
+                        <article>
+                            <a href="{{ route('slug', $favorite->slug) }}">
+                                <img class="content-image" src="data:image/jpeg;base64,{{ $favorite->base64Img }}"
+                                    alt="{{ $favorite->name }}">
+                                <div class="content-details">
+                                    <div class="content-info">
+                                        <div class="content-name">{{ $favorite->name }}</div>
+                                        <div class="content-date">{{ $favorite->ReleaseDate }}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                @endforeach
+        @endif
+    </div>
+    <hr>
+    <h2 class="title1">Yet to Watch</h2>
+    @if ($pendings->isEmpty())
+        <h5 class="title1">"No tienes nada marcado como pendiente"</h5>
+    @else
         <div class="content-grid-flex">
-            @foreach ($favourites as $favorite)
+            @foreach ($pendings as $pending)
                 <div class="content-item-flex">
                     <article>
-                        <a href="{{ route('slug', $favorite->slug) }}">
-                            <img class="content-image" src="data:image/jpeg;base64,{{ $favorite->base64Img }}"
-                                alt="{{ $favorite->name }}">
+                        <a href="{{ route('slug', $pending->slug) }}">
+                            <img class="content-image" src="data:image/jpeg;base64,{{ $pending->base64Img }}"
+                                alt="{{ $pending->name }}">
                             <div class="content-details">
                                 <div class="content-info">
-                                    <div class="content-name">{{ $favorite->name }}</div>
-                                    <div class="content-date">{{ $favorite->ReleaseDate }}</div>
+                                    <div class="content-name">{{ $pending->name }}</div>
+                                    <div class="content-date">{{ $pending->ReleaseDate }}</div>
                                 </div>
                             </div>
                         </a>
                     </article>
                 </div>
             @endforeach
-
         </div>
-        <hr>
-        <h2 class="title1">Yet to Watch</h2>
-        <div class="content-grid-flex">
-        </div>
-        <hr>
-        <h2 class="title1">You Watched</h2>
+    @endif
+    <hr>
+    <h2 class="title1">You Watched</h2>
+    @if ($watched->isEmpty())
+        <h5 class="title1">"Todavía no has visto nada"</h5>
+    @else
         <div class="content-grid-flex">
             @foreach ($watched as $watch)
                 <div class="content-item-flex">
@@ -72,6 +98,7 @@
                     </article>
                 </div>
             @endforeach
-        </div>
+    @endif
+    </div>
     </div>
 @endsection

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Favourites;
 use App\Models\Lists;
+use App\Models\Pendings;
 
 class ProfilePageController extends Controller
 {
@@ -42,7 +43,23 @@ class ProfilePageController extends Controller
             $watchedContent = collect();
         }
 
+
         foreach ($watchedContent as $content) {
+            // Convierte la imagen a base64
+            if ($content->Img != null) {
+                $content->base64Img = base64_encode($content->Img);
+            }
+        }
+
+        $pendings = Pendings::where('user_id', $userID)->pluck('contenidos_id');
+
+        if ($pendings->isNotEmpty()) {
+            $pendingsContent = Contenido::whereIn('id', $pendings)->get();
+        } else {
+            $pendingsContent = collect();
+        }
+
+        foreach ($pendingsContent as $content) {
             // Convierte la imagen a base64
             if ($content->Img != null) {
                 $content->base64Img = base64_encode($content->Img);
@@ -55,6 +72,7 @@ class ProfilePageController extends Controller
             'profile',
             ['favourites' => $favouriteContent, 
             'watched' => $watchedContent, 
+            'pendings' => $pendingsContent,
             'lists' => $lists]
             
         );

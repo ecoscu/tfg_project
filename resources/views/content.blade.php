@@ -37,31 +37,161 @@
                 </a>
             @endif
 
-            <i class="far fa-clock" id="pending-icon"></i>
+            @if ($colorP == 'white')
+                <a href="{{ route('toggle.pending', ['content_id' => $content->id]) }}"">
+                    <i class="far fa-clock" id="pending-icon"></i>
+                </a>
+            @else
+                <a href="{{ route('toggle.pending', ['content_id' => $content->id]) }}"">
+                    <i class="far fa-clock" id="pending-icon" style="color:{{ $colorP }};"></i>
+                </a>
+            @endif
 
             <i class="fas fa-list" id="list-icon" onclick="showlists();"></i>
         </div>
         <div class="stars" id="stars">
-            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
-                @csrf
-                <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
-            </form>
-            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
-                @csrf
-                <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
-            </form>
-            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
-                @csrf
-                <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
-            </form>
-            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
-                @csrf
-                <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
-            </form>
-            <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
-                @csrf
-                <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
-            </form>
+            @if ($UserRate == '1.00')
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star primera"
+                            id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+                </form>
+            @elseif ($UserRate == '2.00')
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star primera"
+                            id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star segunda"
+                            id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+                </form>
+            @elseif($UserRate == '3.00')
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star primera"
+                            id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star segunda"
+                            id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star tercera"
+                            id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+                </form>
+            @elseif($UserRate == '4.00')
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star primera"
+                            id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star segunda"
+                            id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star tercera"
+                            id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star cuarta"
+                            id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+                </form>
+            @elseif($UserRate == '5.00')
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star primera"
+                            id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star segunda"
+                            id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star tercera"
+                            id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star cuarta"
+                            id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star" style="color:yellow"><i class="far fa-star quinta"
+                            id="5"></i></button>
+                </form>
+            @else
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '1']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star primera" id="1"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '2']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star segunda" id="2"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '3']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star tercera" id="3"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '4']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star cuarta" id="4"></i></button>
+                </form>
+                <form action="{{ route('rate', ['content_id' => $content->id, 'rate' => '5']) }}" method="POST">
+                    @csrf
+                    <button class="but-star"><i class="far fa-star quinta" id="5"></i></button>
+                </form>
+            @endif
         </div>
 
         <div class="pop-lists">
@@ -96,7 +226,6 @@
                 <p class="ex-tag">{{ $content->Platform }}</p>
             </div>
         </div>
-
         <div class="comment-section">
             @guest
             @else
@@ -187,8 +316,6 @@
                 for (let i = 0; i <= index; i++) {
                     stars[i].classList.add('active');
                 }
-
-
             });
 
             star.addEventListener('mouseout', () => {

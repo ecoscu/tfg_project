@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->enum('Genre', ['Comedy', 'Drama', 'Action', 'Musical', 'Horror']);
             $table->date('ReleaseDate');
             $table->enum('Platform', ['NETFLIX', 'HBO', 'PrimeVideo', 'AppleTV', 'Disney+']);
-            $table->decimal('Rating');
+            $table->decimal('Rating')->default('0.00');
             $table->timestamps();
         });
 

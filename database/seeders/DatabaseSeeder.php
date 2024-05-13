@@ -48,8 +48,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Action',
             'ReleaseDate' => '2005-01-20',
-            'Platform' => 'Disney+',
-            'Rating' => '3.8'
+            'Platform' => 'Disney+'
         ]);
 
         Contenido::create([
@@ -60,8 +59,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2005-06-28',
-            'Platform' => 'Disney+',
-            'Rating' => '3'
+            'Platform' => 'Disney+'
         ]);
 
         Contenido::create([
@@ -72,8 +70,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '5'
+            'Platform' => 'HBO'
         ]);
         
         Contenido::create([
@@ -84,8 +81,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Horror',
             'ReleaseDate' => '2013-10-18',
-            'Platform' => 'PrimeVideo',
-            'Rating' => '4.2'
+            'Platform' => 'PrimeVideo'
         ]);
 
         Contenido::create([
@@ -96,8 +92,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '4.6'
+            'Platform' => 'HBO'
         ]);
 
         Contenido::create([
@@ -108,8 +103,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '4.7'
+            'Platform' => 'HBO'
         ]);
 
         Contenido::create([
@@ -120,8 +114,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '3.9'
+            'Platform' => 'HBO'
         ]);
 
         Contenido::create([
@@ -132,8 +125,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '4.1'
+            'Platform' => 'HBO'
         ]);
 
         Contenido::create([
@@ -144,8 +136,7 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Horror',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO',
-            'Rating' => '3.4'
+            'Platform' => 'HBO'
         ]);
     }
 }

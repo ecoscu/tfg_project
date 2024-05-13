@@ -12,7 +12,9 @@ use App\Models\Favourites;
 use App\Models\Comment;
 use App\Models\Lists;
 use App\Models\Rating;
+use App\Models\Pendings;
 use App\Http\Controllers\RatingController;
+
 
 
 class ContentController extends Controller
@@ -67,7 +69,6 @@ class ContentController extends Controller
 
     public function slug($slug)
     {
-
         abort_unless(Auth::check(), 401);
 
         $userID = Auth::user()->id;
@@ -76,6 +77,7 @@ class ContentController extends Controller
         $colorF = 'white';
         $colorW = 'white';
         $colorR = 'white';
+        $colorP = 'white';
 
         $checkFavorite = Favourites::where('user_id', $userID)
             ->where('contenidos_id', $content->id)
@@ -96,29 +98,28 @@ class ContentController extends Controller
         $checkRating = Rating::where('user_id', $userID)->where('contenidos_id', $content->id)->first();
         if ($checkRating != null) {
             $colorR = '#F3F32D';
-        }else if ($content->Rating == '5.00') {
-            $content->Rating = '5';
-        }else if ($content->Rating == '4.00') {
-            $content->Rating = '4';
-        }else if ($content->Rating == '3.00') {
-            $content->Rating = '3';
-        }else if ($content->Rating == '2.00') {
-            $content->Rating = '2';
-        }else if ($content->Rating == '1.00') {
-            $content->Rating = '1';
+        }
+
+        $checkPending = Pendings::where('user_id', $userID)->where('contenidos_id', $content->id)->first();
+        if ($checkPending != null) {
+            $colorP = '#ECA643';
         }
 
         $comments = Comment::where('contenidos_id', $content->id)->get();
 
         $lists = Lists::where('user_id', $userID)->get();
 
+        $UserRate = Rating:: where('user_id', $userID)->where('contenidos_id', $content->id)->pluck('rating')->first();
+
         return view('content', [
             'content' => $content,
             'colorF' => $colorF,
             'colorW' => $colorW,
             'colorR' => $colorR,
+            'colorP' => $colorP,
             'comments' => $comments,
-            'lists' => $lists
+            'lists' => $lists,
+            'UserRate' => $UserRate
         ]);
     }
 

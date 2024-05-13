@@ -37,6 +37,7 @@ Route::get('/toggle-favorite/{content_id}', [\App\Http\Controllers\FavouritesCon
 
 Route::get('/toggle-watched/{content_id}', [\App\Http\Controllers\WatchedController::class, 'addWatched'])->name('toggle.watched');
 
+Route::get('/toggle-pending/{content_id}', [\App\Http\Controllers\PendingsController::class, 'addPending'])->name('toggle.pending');
 
 Route::get('/profile-page', [\App\Http\Controllers\ProfilePageController::class, 'profilepage'])->name('profile.page');
 
