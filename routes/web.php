@@ -57,12 +57,14 @@ Route::get('/foro', [\App\Http\Controllers\ForoController::class, 'showforo'])->
 
 Route::get('/like-comment/{comment_id}/{content_id}', [\App\Http\Controllers\CommentController::class, 'likecomment'])->name('like-comment');
 
-
 Route::get('/CreateList',function(){
     return view('createlist');
 })->name('createlist');
 
 Route::post('/list', [\App\Http\Controllers\ListsController::class, 'store'])->name('lists.store');
+
+Route::get('/lists/{lista_id}', [\App\Http\Controllers\ListsController::class, 'show'])->name('list.show');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -203,7 +203,7 @@
             </div>
             @foreach ($lists as $list)
                 <div class="create-list">
-                    <a href="">{{ $list->name }}</a>
+                    <a href="{{ route ('list.show', ['lista_id' => $list->id]) }}">{{ $list->name }}</a>
                 </div>
             @endforeach
         </div>

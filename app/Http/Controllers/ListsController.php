@@ -32,5 +32,15 @@ class ListsController extends Controller
         return Redirect::to('/profile-page/');
     }
 
+    public function show($lista_id){
+
+        $list = Lists::where('id', $lista_id)->first();
+
+        // Buscar el contenido de la lista y sacarlo
+        // falta tabla en BD y poder añadadir contenido a la lista
+
+        return view('lista', ['lista' => $list]);
+    }
+
 
 }
