@@ -25,10 +25,10 @@
                 <li class="nav-op"><a href={{ route('dashboard') }}><i class="fas fa-home nav_ico"></i></a></li>
                 <li><a href={{ route('content.movies') }}><i class="fas fa-film nav_ico"></i>Movies</a></li>
                 <li><a href={{ route('content.series') }}><i class="fas fa-tv nav_ico"></i>TV Shows</a></li>
-                <li><a href="#"><i class="fas fa-rocket nav_ico"></i> Foro</a></li>
+                <li><a href={{ route('foro') }}><i class="fas fa-rocket nav_ico"></i> Foro</a></li>
                 <li class="nav-op"><a href={{ route('profile.page') }}><i class="fas fa-user-alt nav_ico"></i></a></li>
 
-                @if (Auth::user()->name == 'admin')
+                @if (Auth::user()->admin== '1')
                     <li>
                         <a href={{ route('createcontent') }}>Añadir Contenido</a>
                     </li>
@@ -53,8 +53,11 @@
 
 </body>
 <script>
+    
     document.querySelector('.toggle-button').addEventListener('click', function() {
         document.querySelector('nav ul').classList.toggle('active');
+        const filtros = document.querySelector('.filtros');
+        filtros.classList.toggle('active');
     });
 
 
@@ -71,8 +74,8 @@
         if (toggleButton.classList.contains('active')) {
             contentImg.style.top = '550px';
             bottomdiv.style.marginTop = '300px';
-            
-        } else{
+
+        } else {
             contentImg.style.top = '';
             bottomdiv.style.marginTop = '';
         }
@@ -88,7 +91,7 @@
     //         toggleButton.classList.remove('active');
 
     //         // document.querySelector('nav ul').classList.toggle('off');
-            
+
     //         // Restablecer estilos
     //         contentImg.style.top = '';
     //         bottomdiv.style.marginTop = '';
@@ -101,7 +104,6 @@
     //         bottomdiv.style.marginTop = '300px';
     //     }
     // });
-
 </script>
 
 </html>

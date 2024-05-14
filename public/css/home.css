@@ -145,7 +145,11 @@ a{
 @media (max-width: 600px) {
 
     .filtros{
-        top: 50%;
+        top: 20%;
+    }
+
+    .filtros.active{
+        top: 55%;
     }
 
 }

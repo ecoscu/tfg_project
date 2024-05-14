@@ -14,7 +14,7 @@ use App\Models\Lists;
 use App\Models\Rating;
 use App\Models\Pendings;
 use App\Http\Controllers\RatingController;
-
+use App\Models\Commentlikes;
 
 
 class ContentController extends Controller
@@ -105,7 +105,23 @@ class ContentController extends Controller
             $colorP = '#ECA643';
         }
 
+
         $comments = Comment::where('contenidos_id', $content->id)->get();
+        foreach ($comments as $comment) {
+            $like = Commentlikes::where('user_id', $userID)
+                ->where('comments_id', $comment->id)->get();
+
+            if ($like->isEmpty()) {
+                $comment->color = 'white';
+            }else{
+                $comment->color = 'red';
+            }
+
+            $likeCount = Commentlikes::where('comments_id', $comment->id)
+                ->count();
+
+                $comment->lcount = $likeCount;
+        }
 
         $lists = Lists::where('user_id', $userID)->get();
 

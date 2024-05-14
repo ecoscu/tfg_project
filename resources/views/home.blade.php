@@ -11,7 +11,9 @@
     <div class="headerline">
 
         <h3 class="title1">{{ $title }}</h3>
-        <h5 class="title2" onclick="showfilters();"><p>Filtros</p><i class="fas fa-filter"></i></h5>
+        <h5 class="title2" onclick="showfilters();">
+            <p>Filtros</p><i class="fas fa-filter"></i>
+        </h5>
 
         <div class="filtros">
             <form action="{{ route('filter', ['filter' => 'A-Z']) }}" method="POST">
@@ -59,6 +61,7 @@
 
 
 <script>
+    
     function showfilters() {
         var filters = document.querySelectorAll('.filtros');
         filters.forEach(filter => {

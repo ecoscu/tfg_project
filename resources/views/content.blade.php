@@ -240,14 +240,21 @@
                     </div>
                 </form>
             @endguest
-
             <div>
                 @foreach ($comments as $comment)
                     <div class="comments-box">
                         <div class="text-lg">{{ $comment->comment }}</div>
 
                         <div class="by-box">
-                            <div><i class="far fa-heart" id="heart-icon"></i></div>
+                            <div>
+                                <a
+                                    href="{{ route('like-comment', ['comment_id' => $comment->id, 'content_id' => $content->id]) }}"><i
+                                        class="far fa-heart" id="heart-icon"
+                                        style="color: {{ $comment->color }}"></i></a>
+                                @if ($comment->lcount > 0)
+                                    {{ $comment->lcount }}
+                                @endif
+                            </div>
                             <div>
                                 <div>
                                     By {{ $comment->user->name }}

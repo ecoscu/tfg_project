@@ -53,6 +53,10 @@ Route::post('/filter/{filter}', [\App\Http\Controllers\ContentController::class,
 
 Route::post('/rate/{content_id}/{rate}', [\App\Http\Controllers\ContentController::class, 'rate'])->name('rate');
 
+Route::get('/foro', [\App\Http\Controllers\ForoController::class, 'showforo'])->name('foro');
+
+Route::get('/like-comment/{comment_id}/{content_id}', [\App\Http\Controllers\CommentController::class, 'likecomment'])->name('like-comment');
+
 
 Route::get('/CreateList',function(){
     return view('createlist');

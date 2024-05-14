@@ -28,6 +28,8 @@ class ListsController extends Controller
         $lists->user_id = $userID ;
 
         $lists->save();
+
+        return Redirect::to('/profile-page/');
     }
 
 
