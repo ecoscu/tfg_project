@@ -22,4 +22,9 @@ class Comment extends Model
     {
         return $this->belongsTo(Contenido::class);
     }
+
+    public function commentslikes()
+    {
+        return $this->hasMany('App\Models\Commentlikes', 'comments_id');
+    }
 }

@@ -203,7 +203,7 @@
             </div>
             @foreach ($lists as $list)
                 <div class="create-list">
-                    <a href="{{ route ('list.show', ['lista_id' => $list->id]) }}">{{ $list->name }}</a>
+                    <a href="{{ route('list.addcontent', ['lista_id' => $list->id,'content_id' => $content->id])}}">{{ $list->name }}</a>
                 </div>
             @endforeach
         </div>
@@ -230,7 +230,7 @@
             @guest
             @else
                 <hr>
-                <h4>COMMENTS</h4>
+                <h4>COMENTARIOS</h4>
                 <form action="{{ route('comments.store') }}" method="post">
                     @csrf
                     <textarea class="comment-box" name="comment" placeholder="Write your comment..." required></textarea>
@@ -243,7 +243,16 @@
             <div>
                 @foreach ($comments as $comment)
                     <div class="comments-box">
-                        <div class="text-lg">{{ $comment->comment }}</div>
+                        <div class="comment-cross">
+                            <div class="text-lg">{{ $comment->comment }}</div>
+                            <a href="{{ route('comment.delete', ['comment_id' => $comment->id]) }}">
+                                <div>
+                                    @if ($comment->user_id == Auth::user()->id)
+                                        <i class="fas fa-times"></i>
+                                    @endif
+                                </div>
+                            </a>
+                        </div>
 
                         <div class="by-box">
                             <div>

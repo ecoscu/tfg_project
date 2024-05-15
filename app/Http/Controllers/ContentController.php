@@ -15,6 +15,7 @@ use App\Models\Rating;
 use App\Models\Pendings;
 use App\Http\Controllers\RatingController;
 use App\Models\Commentlikes;
+use App\Models\ListContent;
 
 
 class ContentController extends Controller

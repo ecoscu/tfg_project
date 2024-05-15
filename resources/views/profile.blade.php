@@ -3,7 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="/css/profile.css">
     <div>
-        <h2 class="title1">Your Lists</h2>
+        <h2 class="title1">Tus Listas</h2>
         <div class="list-grid-flex">
             <div class="list-item-flex">
                 <a href="{{ route('createlist') }}">
@@ -15,7 +15,7 @@
             </div>
             @foreach ($lists as $list)
                 <div class="list-item-flex">
-                    <a href="">
+                    <a href="{{ route ('list.show', ['lista_id' => $list->id]) }}"">
                         <div class="list-details">
                             <p>{{ $list->name }}</p>
                             @if ($list->privacy == 1)
@@ -29,7 +29,7 @@
             @endforeach
         </div>
         <hr>
-        <h2 class="title1">Your Favourites</h2>
+        <h2 class="title1">Favoritas</h2>
         @if ($favourites->isEmpty())
             <h5 class="title1">"Todavía no tienes favoritos"</h5>
         @else
@@ -53,7 +53,7 @@
         @endif
     </div>
     <hr>
-    <h2 class="title1">Yet to Watch</h2>
+    <h2 class="title1">Por Ver</h2>
     @if ($pendings->isEmpty())
         <h5 class="title1">"No tienes nada marcado como pendiente"</h5>
     @else
@@ -77,7 +77,7 @@
         </div>
     @endif
     <hr>
-    <h2 class="title1">You Watched</h2>
+    <h2 class="title1">Vistas</h2>
     @if ($watched->isEmpty())
         <h5 class="title1">"Todavía no has visto nada"</h5>
     @else

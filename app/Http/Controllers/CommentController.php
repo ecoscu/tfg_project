@@ -59,4 +59,19 @@ class CommentController extends Controller
 
         return Redirect::to('/content/' . $pagContent);
     }
+
+    public function deletecomment($comments_id){
+
+        $content_id = Comment::where('id', $comments_id)->pluck('contenidos_id')->first();
+
+        $comment = Comment::where('id', $comments_id)->first();
+        
+        $comment->commentslikes()->delete();
+        
+        $comment->delete();       
+
+        $pagContent = Contenido::where('id', $content_id)->pluck('slug')->first();
+
+        return Redirect::to('/content/' . $pagContent);
+    }
 }
