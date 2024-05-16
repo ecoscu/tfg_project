@@ -193,7 +193,6 @@ class ContentController extends Controller
 
     public function filter($request)
     {
-
         if ($request == 'A-Z' || $request == '') {
             $contents = Contenido::orderBy('name', 'ASC')->get();
         } elseif ($request == 'Z-A') {
@@ -202,6 +201,26 @@ class ContentController extends Controller
             $contents = Contenido::orderBy('ReleaseDate', 'DESC')->get();
         } elseif ($request == 'Valoracion') {
             $contents = Contenido::orderBy('Rating', 'DESC')->get();
+        }elseif ($request == 'Comedy') {
+            $contents = Contenido::where('Genre', 'Comedy')->get();
+        }elseif ($request == 'Drama') {
+            $contents = Contenido::where('Genre', 'Drama')->get();
+        }elseif ($request == 'Horror') {
+            $contents = Contenido::where('Genre', 'Horror')->get();
+        }elseif ($request == 'Action') {
+            $contents = Contenido::where('Genre', 'Action')->get();
+        }elseif ($request == 'Musical') {
+            $contents = Contenido::where('Genre', 'Musical')->get();
+        }elseif ($request == 'NETFLIX') {
+            $contents = Contenido::where('Platform', 'NETFLIX')->get();
+        }elseif ($request == 'HBO') {
+            $contents = Contenido::where('Platform', 'HBO')->get();
+        }elseif ($request == 'Disney+') {
+            $contents = Contenido::where('Platform', 'Disney+')->get();
+        }elseif ($request == 'PrimeVideo') {
+            $contents = Contenido::where('Platform', 'PrimeVideo')->get();
+        }elseif ($request == 'AppleTV') {
+            $contents = Contenido::where('Platform', 'AppleTV')->get();
         }
 
         foreach ($contents as $content) {

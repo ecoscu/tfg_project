@@ -72,12 +72,23 @@ class ListsController extends Controller
                 ->delete();
 
         } else {
-            
+
             $listcontent = new ListContent;
             $listcontent->lists_id = $lista_id;
             $listcontent->contenidos_id = $content_id;
             $listcontent->save();
         }
+
+        return Redirect::to('/lists/' . $lista_id);
+    }
+
+
+    public function removecontent($lista_id, $content_id)
+    {
+
+        ListContent::where('lists_id', $lista_id)
+            ->where('contenidos_id', $content_id)
+            ->delete();
 
         return Redirect::to('/lists/' . $lista_id);
     }

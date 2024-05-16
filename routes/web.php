@@ -67,6 +67,8 @@ Route::get('/lists/{lista_id}', [\App\Http\Controllers\ListsController::class, '
 
 Route::get('/lists-add/{lista_id}/{content_id}', [\App\Http\Controllers\ListsController::class, 'addcontent'])->name('list.addcontent');
 
+Route::get('/lists-remove/{lista_id}/{content_id}', [\App\Http\Controllers\ListsController::class, 'removecontent'])->name('list.removecontent');
+
 Route::get('/comment-delete/{comment_id}', [\App\Http\Controllers\CommentController::class, 'deletecomment'])->name('comment.delete');
 
 

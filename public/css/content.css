@@ -259,7 +259,7 @@ body {
 
 .create-list:hover{
     background-color: white;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 
 @media (max-width: 600px) {

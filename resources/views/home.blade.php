@@ -11,9 +11,11 @@
     <div class="headerline">
 
         <h3 class="title1">{{ $title }}</h3>
-        <h5 class="title2" onclick="showfilters();">
-            <p>Filtros</p><i class="fas fa-filter"></i>
-        </h5>
+        @if ($title == 'All')
+            <h5 class="title2" onclick="showfilters();">
+                <p>Filtros</p><i class="fas fa-filter"></i>
+            </h5>
+        @endif
 
         <div class="filtros">
             <form action="{{ route('filter', ['filter' => 'A-Z']) }}" method="POST">
@@ -24,6 +26,68 @@
                 @csrf
                 <button type="submit" class="filter">Z-A</button>
             </form>
+            {{-- <form action="" method="POST">
+                @csrf --}}
+            <div class="filter-down gen" onclick="showsubGenfilters();">
+                <a class="filter">
+                    <button class="down">Genero</button>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+            <div class="sub-filtros-gen">
+                <form action="{{ route('filter', ['filter' => 'Comedy']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Comedy</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'Drama']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Drama</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'Horror']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Horror</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'Action']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Action</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'Musical']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Musical</button>
+                </form>
+            </div>
+            {{-- </form> --}}
+            {{-- <form action="" method="POST">
+                @csrf --}}
+            <div class="filter-down" onclick="showsubPlatfilters();">
+                <a class="filter">
+                    <button class="down">Plataforma</button>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+            <div class="sub-filtros-plat">
+                <form action="{{ route('filter', ['filter' => 'NETFLIX']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">NETFLIX</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'HBO']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">HBO</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'Disney+']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">Disney+</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'PrimeVideo']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">PrimeVideo</button>
+                </form>
+                <form action="{{ route('filter', ['filter' => 'AppleTV']) }}" method="POST">
+                    @csrf
+                    <button type="submit" class="filter">AppleTV</button>
+                </form>
+            </div>
+            {{-- </form> --}}
             <form action="{{ route('filter', ['filter' => 'Recientes']) }}" method="POST">
                 @csrf
                 <button type="submit" class="filter">Mas Recientes</button>
@@ -61,10 +125,31 @@
 
 
 <script>
-    
     function showfilters() {
         var filters = document.querySelectorAll('.filtros');
         filters.forEach(filter => {
+            if (filter.style.display === 'none' || filter.style.display === '') {
+                filter.style.display = 'block';
+            } else {
+                filter.style.display = 'none';
+            }
+        });
+    }
+
+    function showsubGenfilters() {
+        var subfilters = document.querySelectorAll('.sub-filtros-gen');
+        subfilters.forEach(filter => {
+            if (filter.style.display === 'none' || filter.style.display === '') {
+                filter.style.display = 'block';
+            } else {
+                filter.style.display = 'none';
+            }
+        });
+    }
+
+    function showsubPlatfilters() {
+        var subfilters = document.querySelectorAll('.sub-filtros-plat');
+        subfilters.forEach(filter => {
             if (filter.style.display === 'none' || filter.style.display === '') {
                 filter.style.display = 'block';
             } else {

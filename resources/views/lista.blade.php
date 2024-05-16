@@ -21,6 +21,13 @@
                                 <div class="content-name">{{ $content->name }}</div>
                                 <div class="content-date">{{ $content->ReleaseDate }}</div>
                             </div>
+                            @if ($lista->user_id == Auth::user()->id)
+                                <a href="{{ route('list.removecontent', ['lista_id' => $lista->id, 'content_id' => $content->id]) }}">
+                                    <div class="delete">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </a>
+                            @endif
                         </div>
                     </a>
                 </article>

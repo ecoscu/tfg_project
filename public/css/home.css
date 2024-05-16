@@ -68,7 +68,7 @@ a{
     align-items: center;
     color: rgb(255, 255, 255);
     margin-left: 50%;
-    background-color: rgb(107, 107, 107);
+    background-color: #6B6B6B;
     top: 20%;
     right: 75px;
     text-align: center;
@@ -94,6 +94,58 @@ a{
 .filter:hover{
     background-color: rgb(52, 52, 52);
 }
+
+.filter-down{
+    display: flex;
+}
+
+.down{
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.filter-down > i{
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.sub-filtros-gen{
+    display: none;
+    font-size: 15px;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(118, 118, 118);
+    top: 20%;
+    right: 180px;
+    text-align: center;
+    z-index: 1;
+}
+
+.sub-filtros-gen > form{
+    margin-bottom: 0;
+}
+
+.sub-filtros-gen.active{
+    display: block;
+}
+
+.sub-filtros-plat{
+    display: none;
+    font-size: 15px;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(118, 118, 118);
+    top: 20%;
+    right: 180px;
+    text-align: center;
+    z-index: 1;
+}
+
+.sub-filtros-plat > form{
+    margin-bottom: 0;
+}
+
 
 .content-grid-flex {
     display: flex;
