@@ -86,6 +86,7 @@ a{
     border-radius: 5px;
     display: inline-block; 
     object-fit: cover; 
+    margin-bottom: 5px;
 }
 
 .content-details {

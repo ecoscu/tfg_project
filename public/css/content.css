@@ -24,6 +24,7 @@ body {
     max-width: 350px;
     z-index: 1;
     text-align: center;
+    
 }
 
 .content-image {
@@ -31,6 +32,8 @@ body {
     height: auto;
     border-radius: 5px;
     object-fit: cover;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    margin-bottom: 5px;
 }
 
 .fecha {

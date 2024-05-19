@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 </head>
-
-<body>
-    <div class="py-5 max-w-7xl text-justify">
+<style>
+</style>
+<body style="background-color: rgb(34, 34, 34)">
+    <div class="py-5 max-w-7xl text-justify" style="color: white">
         <div class="container">
             <div class="row justify-content-center">
                 <form action="{{ route('content.store') }}" method="post" enctype="multipart/form-data"
