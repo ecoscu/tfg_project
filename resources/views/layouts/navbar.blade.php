@@ -57,10 +57,10 @@
     document.querySelector('.toggle-button').addEventListener('click', function() {
         document.querySelector('nav ul').classList.toggle('active');
         const filtros = document.querySelector('.filtros');
-        filtros.classList.toggle('active');
+        filtros.classList.toggle('bajo');
     });
 
-
+    
     const toggleButton = document.querySelector('.toggle-button');
     const contentImg = document.querySelector('.content-img');
     const bottomdiv = document.querySelector('.bottom-div');

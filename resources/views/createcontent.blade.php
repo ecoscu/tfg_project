@@ -12,7 +12,7 @@
 <style>
 </style>
 <body style="background-color: rgb(34, 34, 34)">
-    <div class="py-5 max-w-7xl text-justify" style="color: white">
+    <div class="py-4 max-w-7xl text-justify" style="color: white">
         <div class="container">
             <div class="row justify-content-center">
                 <form action="{{ route('content.store') }}" method="post" enctype="multipart/form-data"
@@ -64,14 +64,17 @@
                             <option value="Disney+">Disney+</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="rating">Calificación:</label>
                         <input type="number" step="0.1" class="form-control" id="rating" name="rating">
+                    </div> --}}
+                    <div class="form-group">
+                        <label for="URL">URL:</label>
+                        <input type="text" class="form-control" id="URL" name="URL">
                     </div>
-                    <br>
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary">Enviar</button>
-                      </div>
+                    </div>
                 </form>
             </div>
         </div>

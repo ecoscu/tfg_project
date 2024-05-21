@@ -37,6 +37,7 @@ class ListsController extends Controller
 
     public function show($lista_id)
     {
+        abort_unless(Auth::check(), 401);
 
         $list = Lists::where('id', $lista_id)->first();
 
@@ -83,14 +84,31 @@ class ListsController extends Controller
     }
 
 
-    public function removecontent($lista_id, $content_id)
+    public function removecontentnolink($lista_id, $content_id)
     {
-
         ListContent::where('lists_id', $lista_id)
             ->where('contenidos_id', $content_id)
             ->delete();
+    }
+
+    public function removecontent($lista_id, $content_id)
+    {   
+        $this->removecontentnolink($lista_id, $content_id);
 
         return Redirect::to('/lists/' . $lista_id);
+    }
+
+    public function deletelist($lista_id)
+    {
+        $listcontent = ListContent::where('lists_id', $lista_id)->pluck('contenidos_id');
+
+        foreach ($listcontent as $content) {
+            $this->removecontentnolink($lista_id, $content);
+        }
+
+        Lists::where('id', $lista_id)->delete();
+
+        return Redirect::to('/profile-page/');
     }
 
 }

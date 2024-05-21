@@ -63,6 +63,16 @@ a{
     margin-left: 45%;
 }
 
+.delete-list{
+    color:rgb(52, 52, 52);
+}
+
+
 .delete:hover{
     color:rgb(204, 68, 68)
 }
+
+.delete-list:hover{
+    color: rgb(204, 68, 68);
+}
+

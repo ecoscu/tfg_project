@@ -83,6 +83,10 @@ a{
     margin-bottom: 0;
 }
 
+.filtros.bajo{
+    top: 55%;
+}
+
 .filtros.active{
     display: block;
 }
@@ -188,7 +192,9 @@ a{
     font-weight: bold;
 }
 
-
+.content-image:hover{
+    box-shadow: 10px 10px 15px rgb(0, 0, 0);
+}
 .content-item-flex:hover{
     scale: 102%;
 }
@@ -202,11 +208,11 @@ a{
 @media (max-width: 600px) {
 
     .filtros{
-        top: 20%;
+        top: 21.5%;
     }
 
-    .filtros.active{
-        top: 55%;
-    }
+    /* .filtros.active{
+        top: 50%;
+    } */
 
 }

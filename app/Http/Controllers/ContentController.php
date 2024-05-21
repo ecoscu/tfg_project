@@ -58,7 +58,8 @@ class ContentController extends Controller
             $content->Genre = $request->input('genre');
             $content->ReleaseDate = $request->input('release_date');
             $content->Platform = $request->input('platform');
-            $content->Rating = $request->input('rating');
+            // $content->Rating = $request->input('rating');
+            $content->URL = $request->input('URL');
 
             $res = $content->save();
         } else {
@@ -107,7 +108,7 @@ class ContentController extends Controller
         }
 
 
-        $comments = Comment::where('contenidos_id', $content->id)->get();
+        $comments = Comment::where('contenidos_id', $content->id)->orderBy('created_at', 'desc')->get();
         foreach ($comments as $comment) {
             $like = Commentlikes::where('user_id', $userID)
                 ->where('comments_id', $comment->id)->get();

@@ -17,7 +17,8 @@ class ProfilePageController extends Controller
 
     public function profilepage()
     {
-
+        abort_unless(Auth::check(), 401);
+        
         $userID = Auth::user()->id;
 
         $favourites = Favourites::where('user_id', $userID)->pluck('contenidos_id');

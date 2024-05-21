@@ -203,7 +203,8 @@
             </div>
             @foreach ($lists as $list)
                 <div class="create-list">
-                    <a href="{{ route('list.addcontent', ['lista_id' => $list->id,'content_id' => $content->id])}}">{{ $list->name }}</a>
+                    <a
+                        href="{{ route('list.addcontent', ['lista_id' => $list->id, 'content_id' => $content->id]) }}">{{ $list->name }}</a>
                 </div>
             @endforeach
         </div>
@@ -224,6 +225,11 @@
             <div class="platform">
                 <p>Platform:</p>
                 <p class="ex-tag">{{ $content->Platform }}</p>
+            </div>
+            <div class="see">
+                <a href="{{$content->URL}}">
+                    <p>Ver</p>
+                </a>
             </div>
         </div>
         <div class="comment-section">

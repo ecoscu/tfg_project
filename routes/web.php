@@ -55,6 +55,10 @@ Route::post('/rate/{content_id}/{rate}', [\App\Http\Controllers\ContentControlle
 
 Route::get('/foro', [\App\Http\Controllers\ForoController::class, 'showforo'])->name('foro');
 
+Route::post('/forocomment', [\App\Http\Controllers\ForoController::class, 'saveforocomment'])->name('forocomment');
+
+Route::get('/forocomment-delete/{comment_id}', [\App\Http\Controllers\ForoController::class, 'deletecomment'])->name('forocommentdelete');
+
 Route::get('/like-comment/{comment_id}/{content_id}', [\App\Http\Controllers\CommentController::class, 'likecomment'])->name('like-comment');
 
 Route::get('/CreateList',function(){
@@ -69,7 +73,10 @@ Route::get('/lists-add/{lista_id}/{content_id}', [\App\Http\Controllers\ListsCon
 
 Route::get('/lists-remove/{lista_id}/{content_id}', [\App\Http\Controllers\ListsController::class, 'removecontent'])->name('list.removecontent');
 
+Route::get('/lists-delete/{lista_id}', [\App\Http\Controllers\ListsController::class, 'deletelist'])->name('list.delete');
+
 Route::get('/comment-delete/{comment_id}', [\App\Http\Controllers\CommentController::class, 'deletecomment'])->name('comment.delete');
+
 
 
 // Route::get('/dashboard', function () {

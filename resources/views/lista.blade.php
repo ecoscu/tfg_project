@@ -7,6 +7,11 @@
         @if (!empty($lista->description))
             <h5>{{ $lista->description }}</h5>
         @endif
+        <a href="{{ route('list.delete', ['lista_id' => $lista->id]) }}">
+            <div class="delete-list">
+                <i class="fas fa-times"></i>
+            </div>
+        </a>
     </div>
     <hr>
     <div class="content-grid-flex">

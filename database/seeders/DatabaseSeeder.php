@@ -75,7 +75,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Action',
             'ReleaseDate' => '2005-01-20',
-            'Platform' => 'Disney+'
+            'Platform' => 'Disney+',
+            'URL' => 'https://www.disneyplus.com/browse/entity-9c1b0ec2-2e4e-4717-89fb-bdf3a45523df'
         ]);
 
         Contenido::create([
@@ -86,7 +87,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2005-06-28',
-            'Platform' => 'Disney+'
+            'Platform' => 'Disney+',
+            'URL' => 'https://www.disneyplus.com/browse/entity-3db0cb33-5346-4b09-88e4-828dcc4916fe'
         ]);
 
         Contenido::create([
@@ -97,7 +99,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO'
+            'Platform' => 'HBO',
+            'URL' => 'https://play.max.com/show/4f6b4985-2dc9-4ab6-ac79-d60f0860b0ac'
         ]);
         
         Contenido::create([
@@ -108,7 +111,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Horror',
             'ReleaseDate' => '2013-10-18',
-            'Platform' => 'PrimeVideo'
+            'Platform' => 'HBO',
+            'URL' => 'https://play.max.com/movie/d1b146e9-7426-4463-804d-3ca656e38492'
         ]);
 
         Contenido::create([
@@ -119,7 +123,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Drama',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'HBO'
+            'Platform' => 'HBO',
+            'URL' => 'https://play.max.com/movie/c63819d8-de84-4e74-bd59-29948bc673e3'
         ]);
 
         Contenido::create([
@@ -130,7 +135,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2016-6-15',
-            'Platform' => 'NETFLIX'
+            'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/80057281'
         ]);
 
         Contenido::create([
@@ -141,7 +147,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2014-03-19',
-            'Platform' => 'NETFLIX'
+            'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/70283264'
         ]);
 
         Contenido::create([
@@ -153,6 +160,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Drama',
             'ReleaseDate' => '2017-05-02',
             'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/80192098'
         ]);
 
         Contenido::create([
@@ -163,7 +171,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Horror',
             'ReleaseDate' => '2011-04-17',
-            'Platform' => 'Disney+'
+            'Platform' => 'Disney+',
+            'URL' => 'https://www.disneyplus.com/browse/entity-1c81b173-8647-4520-b8f2-4b62d6cd26ea'
         ]);
 
         Contenido::create([
@@ -174,7 +183,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Horror',
             'ReleaseDate' => '2017-09-08',
-            'Platform' => 'NETFLIX'
+            'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/80177770'
         ]);
 
         Contenido::create([
@@ -185,7 +195,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Drama',
             'ReleaseDate' => '2021-02-22',
-            'Platform' => 'HBO'
+            'Platform' => 'HBO',
+            'URL' => 'https://play.max.com/movie/e7dc7b3a-a494-4ef1-8107-f4308aa6bbf7'
         ]);
 
         Contenido::create([
@@ -196,7 +207,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Series',
             'Genre' => 'Drama',
             'ReleaseDate' => '2022-08-22',
-            'Platform' => 'HBO'
+            'Platform' => 'HBO',
+            'URL' => 'https://play.max.com/show/c68e69d7-9317-428a-a615-cdf8fe5a2e06'
         ]);
 
         Contenido::create([
@@ -207,7 +219,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Musical',
             'ReleaseDate' => '2017-12-29',
-            'Platform' => 'Disney+'
+            'Platform' => 'Disney+',
+            'URL' => 'https://www.disneyplus.com/browse/entity-9a387ba2-9211-4493-a994-d4b73b8eaf3c'
         ]);
 
         Contenido::create([
@@ -218,7 +231,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Musical',
             'ReleaseDate' => '2013-03-08',
-            'Platform' => 'PrimeVideo'
+            'Platform' => 'PrimeVideo',
+            'URL' => 'https://www.primevideo.com/-/es/detail/Pitch-Perfect/0U43X2S253SWZI5XHHKYSQ1YJO'
         ]);
 
         Contenido::create([
@@ -229,7 +243,8 @@ class DatabaseSeeder extends Seeder
             'Type' => 'Movie',
             'Genre' => 'Horror',
             'ReleaseDate' => '2023-06-27',
-            'Platform' => 'PrimeVideo'
+            'Platform' => 'PrimeVideo',
+            'URL' => 'https://www.primevideo.com/detail/0QUOEZQ86MG4OQC9QWDKGHJKK1/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B0C9VS83BX&qid=1716317927391'
         ]);
 
         Contenido::create([
@@ -241,6 +256,8 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Comedy',
             'ReleaseDate' => '2009-11-27',
             'Platform' => 'AppleTV',
+            'URL' => 'https://tv.apple.com/us/movie/zombieland/umc.cmc.6wwa6bx0gi4b53riq7a3wipeb'
+
         ]);
 
         Contenido::create([
@@ -252,6 +269,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Action',
             'ReleaseDate' => '2019-04-26',
             'Platform' => 'Disney+',
+            'URL' => 'https://www.disneyplus.com/browse/entity-b39aa962-be56-4b09-a536-98617031717f'
         ]);
 
         Contenido::create([
@@ -263,6 +281,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Comedy',
             'ReleaseDate' => '2016-07-29',
             'Platform' => 'PrimeVideo',
+            'URL' => 'https://www.primevideo.com/-/es/detail/Bad-Moms/0R9TQXFLCI0CSMKGUL9BDWWBDU'
         ]);
 
         Contenido::create([
@@ -274,6 +293,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Drama',
             'ReleaseDate' => '2020-06-10',
             'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/81037850'
         ]);
 
         Contenido::create([
@@ -285,6 +305,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Musical',
             'ReleaseDate' => '2009-08-13',
             'Platform' => 'PrimeVideo',
+            'URL' => 'https://www.primevideo.com/region/eu/detail/0T610DH9YXP9YD7PIK2YLCLFEC/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B01N592H4M&qid=1716318182855'
         ]);
 
         Contenido::create([
@@ -296,6 +317,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Action',
             'ReleaseDate' => '2006-07-21',
             'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/70044885'
         ]);
 
         Contenido::create([
@@ -307,6 +329,7 @@ class DatabaseSeeder extends Seeder
             'Genre' => 'Action',
             'ReleaseDate' => '2014-09-19',
             'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/70291089'
         ]);
     }
 }
