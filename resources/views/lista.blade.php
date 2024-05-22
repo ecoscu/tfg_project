@@ -7,11 +7,14 @@
         @if (!empty($lista->description))
             <h5>{{ $lista->description }}</h5>
         @endif
-        <a href="{{ route('list.delete', ['lista_id' => $lista->id]) }}">
-            <div class="delete-list">
-                <i class="fas fa-times"></i>
-            </div>
-        </a>
+        <h6>By {{ $lista->username }}</h6>
+        @if ($lista->user_id == Auth::user()->id)
+            <a href="{{ route('list.delete', ['lista_id' => $lista->id]) }}">
+                <div class="delete-list">
+                    <i class="fas fa-times"></i>
+                </div>
+            </a>
+        @endif
     </div>
     <hr>
     <div class="content-grid-flex">
@@ -27,7 +30,8 @@
                                 <div class="content-date">{{ $content->ReleaseDate }}</div>
                             </div>
                             @if ($lista->user_id == Auth::user()->id)
-                                <a href="{{ route('list.removecontent', ['lista_id' => $lista->id, 'content_id' => $content->id]) }}">
+                                <a
+                                    href="{{ route('list.removecontent', ['lista_id' => $lista->id, 'content_id' => $content->id]) }}">
                                     <div class="delete">
                                         <i class="fas fa-times"></i>
                                     </div>

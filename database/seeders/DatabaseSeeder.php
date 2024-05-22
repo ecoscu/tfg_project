@@ -48,7 +48,6 @@ class DatabaseSeeder extends Seeder
         $imagentalktome = file_get_contents($imgtalktome);
         $imgzombie= public_path('img/Bienvenidos_a_Zombieland.jpg');
         $imagenzombie= file_get_contents($imgzombie);
-
         $imgbadmums= public_path('img/badmums.jpg');
         $imagenbadmums = file_get_contents($imgbadmums);
         $imgcuron= public_path('img/Curon.jpg');
@@ -59,6 +58,8 @@ class DatabaseSeeder extends Seeder
         $imagentokyodrive= file_get_contents($imgtokyodrive);
         $imgmazerunner= public_path('img/maze_runner.jpg');
         $imagenmazerunner= file_get_contents($imgmazerunner);
+        $imgpaquita= public_path('img/paquita.jpg');
+        $imagenpaquita= file_get_contents($imgpaquita);
         
         User::create([
             'name' => 'admin',
@@ -330,6 +331,18 @@ class DatabaseSeeder extends Seeder
             'ReleaseDate' => '2014-09-19',
             'Platform' => 'NETFLIX',
             'URL' => 'https://www.netflix.com/title/70291089'
+        ]);
+
+        Contenido::create([
+            'name' => 'Paquita Salas',
+            'slug' => 'paquita-salas',
+            'Img' => $imagenpaquita,
+            'Sinopsis' => 'Paquita Salas es la jefa y responsable de su propia agencia de representación de actores, llamada PS Management. Es una mujer maleducada y chapada a la antigua que rechaza las nuevas tecnologías. Vivió la gloria de los años 90, donde su agencia estaba llena de jóvenes promesas. Ahora, años después, intenta adaptarse a los nuevos tiempos con la ayuda de su asistente Maüi Moreno.',
+            'Type' => 'Series',
+            'Genre' => 'Comedy',
+            'ReleaseDate' => '2016-07-06',
+            'Platform' => 'NETFLIX',
+            'URL' => 'https://www.netflix.com/title/80195828'
         ]);
     }
 }

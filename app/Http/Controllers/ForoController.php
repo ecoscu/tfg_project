@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Contenido;
 use App\Models\Favourites;
 use App\Models\ForoComment;
+use App\Models\Lists;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ForoCommentRequest;
@@ -18,7 +20,9 @@ class ForoController extends Controller
 
         $foroComments = ForoComment::orderBy('created_at', 'desc')->get();
 
-        return view('foro', ['foroComments' => $foroComments]);
+        $publiclists = Lists::where('privacy', '1')->get();
+
+        return view('foro', ['foroComments' => $foroComments, 'publiclists' => $publiclists]);
         
     }
 

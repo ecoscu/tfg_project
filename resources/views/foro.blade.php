@@ -16,16 +16,23 @@
         @endguest
     </div>
     <hr>
-    <div class="radiofilter">
-        <div class="radiooption">
-            <input type="radio" id="comments" name="filteroption" value="comments">
-            <label for="html">COMMENTS</label><br>
+    <h2 class="title">Listas Publicas</h2>
+        <div class="list-grid-flex">
+            @foreach ($publiclists as $list)
+                <div class="list-item-flex">
+                    <a href="{{ route ('list.show', ['lista_id' => $list->id]) }}"">
+                        <div class="list-details">
+                            <p>{{ $list->name }}</p>
+                            @if ($list->privacy == 1)
+                                <i class="fas fa-globe-europe"></i>
+                            @else
+                                <i class="fas fa-lock"></i>
+                            @endif
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
-        <div class="rightradio">
-            <input type="radio" id="lists" name="filteroption" value="lists">
-            <label for="css">LISTS</label><br>
-        </div>
-    </div>
     <hr>
 
     <h2 class="title">Comments</h2>

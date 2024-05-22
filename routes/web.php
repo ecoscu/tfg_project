@@ -77,7 +77,9 @@ Route::get('/lists-delete/{lista_id}', [\App\Http\Controllers\ListsController::c
 
 Route::get('/comment-delete/{comment_id}', [\App\Http\Controllers\CommentController::class, 'deletecomment'])->name('comment.delete');
 
+Route::get('/adminpanel', [\App\Http\Controllers\AdminPanelController::class, 'show'])->name('adminpanel');
 
+Route::get('/delete-content/{content_id}', [\App\Http\Controllers\ContentController::class, 'delete'])->name('deletecontent');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

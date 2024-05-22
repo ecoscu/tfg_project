@@ -6,6 +6,7 @@ use App\Models\ListContent;
 use Illuminate\Http\Request;
 use App\Models\Lists;
 use App\Models\Contenido;
+use App\Models\User;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -43,6 +44,9 @@ class ListsController extends Controller
 
         $contents_ids = ListContent::where('lists_id', $lista_id)->pluck('contenidos_id');
 
+        $username = User::where('id', $list->user_id)->pluck('name')->first();
+        $list->username = $username;
+        
         $listContents = [];
 
         foreach ($contents_ids as $content_id) {

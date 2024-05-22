@@ -58,10 +58,10 @@ nav ul li a:hover {
 /* Responsive adjustments */
 @media (max-width: 600px) {
 
-    .nav-op{
+    /* .nav-op{
         display: flex;
         justify-content: center;
-    }
+    } */
 
     .menu {
         display: block;

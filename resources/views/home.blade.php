@@ -112,7 +112,10 @@
                             <div class="content-details">
                                 <div class="content-info">
                                     <div class="content-name">{{ $content->name }}</div>
-                                    <div class="content-date">{{ $content->ReleaseDate }}</div>
+                                    <div class="content-date" style="display: flex; justify-content: space-around;">
+                                        <div>{{ $content->ReleaseDate }}</div> 
+                                        <div>{{$content->Rating}} <i class="far fa-star" style="color: yellow"></i> </div>
+                                    </div>
                                 </div>
                             </div>
                         </a>

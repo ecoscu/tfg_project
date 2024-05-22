@@ -115,19 +115,19 @@ class ContentController extends Controller
 
             if ($like->isEmpty()) {
                 $comment->color = 'white';
-            }else{
+            } else {
                 $comment->color = 'red';
             }
 
             $likeCount = Commentlikes::where('comments_id', $comment->id)
                 ->count();
 
-                $comment->lcount = $likeCount;
+            $comment->lcount = $likeCount;
         }
 
         $lists = Lists::where('user_id', $userID)->get();
 
-        $UserRate = Rating:: where('user_id', $userID)->where('contenidos_id', $content->id)->pluck('rating')->first();
+        $UserRate = Rating::where('user_id', $userID)->where('contenidos_id', $content->id)->pluck('rating')->first();
 
         return view('content', [
             'content' => $content,
@@ -202,25 +202,25 @@ class ContentController extends Controller
             $contents = Contenido::orderBy('ReleaseDate', 'DESC')->get();
         } elseif ($request == 'Valoracion') {
             $contents = Contenido::orderBy('Rating', 'DESC')->get();
-        }elseif ($request == 'Comedy') {
+        } elseif ($request == 'Comedy') {
             $contents = Contenido::where('Genre', 'Comedy')->get();
-        }elseif ($request == 'Drama') {
+        } elseif ($request == 'Drama') {
             $contents = Contenido::where('Genre', 'Drama')->get();
-        }elseif ($request == 'Horror') {
+        } elseif ($request == 'Horror') {
             $contents = Contenido::where('Genre', 'Horror')->get();
-        }elseif ($request == 'Action') {
+        } elseif ($request == 'Action') {
             $contents = Contenido::where('Genre', 'Action')->get();
-        }elseif ($request == 'Musical') {
+        } elseif ($request == 'Musical') {
             $contents = Contenido::where('Genre', 'Musical')->get();
-        }elseif ($request == 'NETFLIX') {
+        } elseif ($request == 'NETFLIX') {
             $contents = Contenido::where('Platform', 'NETFLIX')->get();
-        }elseif ($request == 'HBO') {
+        } elseif ($request == 'HBO') {
             $contents = Contenido::where('Platform', 'HBO')->get();
-        }elseif ($request == 'Disney+') {
+        } elseif ($request == 'Disney+') {
             $contents = Contenido::where('Platform', 'Disney+')->get();
-        }elseif ($request == 'PrimeVideo') {
+        } elseif ($request == 'PrimeVideo') {
             $contents = Contenido::where('Platform', 'PrimeVideo')->get();
-        }elseif ($request == 'AppleTV') {
+        } elseif ($request == 'AppleTV') {
             $contents = Contenido::where('Platform', 'AppleTV')->get();
         }
 
@@ -270,5 +270,74 @@ class ContentController extends Controller
         $pagContent = Contenido::where('id', $content_id)->pluck('slug')->first();
 
         return Redirect::to('/content/' . $pagContent);
+    }
+
+    public function delete($content_id)
+    {
+        // Delete comments and likes from those comments
+        $commentController = new CommentController();
+
+        $comments = Comment::where('contenidos_id', $content_id)->get();
+
+        foreach ($comments as $comment) {
+            $commentController->deletecomment($comment->id);
+        }
+
+        // Delete Ratings of this content
+
+        $ratings = Rating::where('contenidos_id', $content_id)->get();
+
+        foreach ($ratings as $rating) {
+            Rating::where('user_id', $rating->user_id)
+                ->where('contenidos_id', $rating->contenidos_id)
+                ->delete();
+        }
+
+        // Delete content from all favourites
+        $favourites = Favourites::where('contenidos_id', $content_id)->get();
+
+        foreach ($favourites as $favourite) {
+
+            Favourites::where('user_id', $favourite->user_id)
+                ->where('contenidos_id', $favourite->contenidos_id)
+                ->delete();
+
+        }
+
+        // Delete content from all watched
+        $vistas = Watched::where('contenidos_id', $content_id)->get();
+
+        foreach ($vistas as $vista) {
+
+            Watched::where('user_id', $vista->user_id)
+                ->where('contenidos_id', $vista->contenidos_id)
+                ->delete();
+
+        }
+
+        // Delete content from pendings
+        $pendientes = Pendings::where('contenidos_id', $content_id)->get();
+
+        foreach ($pendientes as $pendiente) {
+
+            Pendings::where('user_id', $pendiente->user_id)
+                ->where('contenidos_id', $pendiente->contenidos_id)
+                ->delete();
+
+        }
+
+        // Delete content from all lists
+        $listas = Lists::all();
+
+        foreach ($listas as $lista) {
+
+            ListContent::where('lists_id', $lista->id)
+                ->where('contenidos_id', $content_id)
+                ->delete();
+        }
+
+        Contenido::where('id', $content_id)->delete();
+
+        return Redirect::to('/adminpanel/');
     }
 }

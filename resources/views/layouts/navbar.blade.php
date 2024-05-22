@@ -28,9 +28,12 @@
                 <li><a href={{ route('foro') }}><i class="fas fa-rocket nav_ico"></i> Foro</a></li>
                 <li class="nav-op"><a href={{ route('profile.page') }}><i class="fas fa-user-alt nav_ico"></i></a></li>
 
-                @if (Auth::user()->admin== '1')
+                @if (Auth::user()->admin == '1')
                     <li>
                         <a href={{ route('createcontent') }}>Añadir Contenido</a>
+                    </li>
+                    <li>
+                        <a href={{ route('adminpanel') }}><i class="fas fa-cog nav_ico"></i></a>
                     </li>
                 @endif
 
@@ -38,7 +41,7 @@
                     <a class="hover:text-purple-900" href="{{ route('logout') }}" title="logout"
                         class="no-underline hover:underline"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                            class="fas fa-sign-out-alt"></i></a>
+                            class="fas fa-sign-out-alt nav_ico"></i></a>
                     <form class="hide" id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                         {{ csrf_field() }}
                     </form>
@@ -53,14 +56,13 @@
 
 </body>
 <script>
-    
     document.querySelector('.toggle-button').addEventListener('click', function() {
         document.querySelector('nav ul').classList.toggle('active');
         const filtros = document.querySelector('.filtros');
         filtros.classList.toggle('bajo');
     });
 
-    
+
     const toggleButton = document.querySelector('.toggle-button');
     const contentImg = document.querySelector('.content-img');
     const bottomdiv = document.querySelector('.bottom-div');

@@ -219,11 +219,11 @@
         <p>{{ $content->Sinopsis }}</p>
         <div class="Extras">
             <div class="genere">
-                <p>Genere:</p>
+                <p>Genero:</p>
                 <p class="ex-tag">{{ $content->Genre }}</p>
             </div>
             <div class="platform">
-                <p>Platform:</p>
+                <p>Plataforma:</p>
                 <p class="ex-tag">{{ $content->Platform }}</p>
             </div>
             <div class="see">
@@ -253,7 +253,7 @@
                             <div class="text-lg">{{ $comment->comment }}</div>
                             <a href="{{ route('comment.delete', ['comment_id' => $comment->id]) }}">
                                 <div>
-                                    @if ($comment->user_id == Auth::user()->id)
+                                    @if ($comment->user_id == Auth::user()->id || Auth::user()->admin == '1')
                                         <i class="fas fa-times"></i>
                                     @endif
                                 </div>
