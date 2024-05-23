@@ -28,6 +28,9 @@ Route::get('/Home', [\App\Http\Controllers\ContentController::class, 'show'])->n
 Route::get('/content/{slug}', [\App\Http\Controllers\ContentController::class, 'slug'])->name('slug');
 
 Route::get('/CreateContent',function(){
+    abort_unless(Auth::check(), 401);
+    abort_unless(Auth::user()->admin == '1', 401);
+
     return view('createcontent');
 })->name('createcontent');
 
@@ -62,6 +65,7 @@ Route::get('/forocomment-delete/{comment_id}', [\App\Http\Controllers\ForoContro
 Route::get('/like-comment/{comment_id}/{content_id}', [\App\Http\Controllers\CommentController::class, 'likecomment'])->name('like-comment');
 
 Route::get('/CreateList',function(){
+    abort_unless(Auth::check(), 401);
     return view('createlist');
 })->name('createlist');
 

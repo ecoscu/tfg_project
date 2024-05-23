@@ -39,9 +39,9 @@
                         <br>
                         <div class="privacy text-center">
                             <input type="radio" id="public" name="privacy" value="public" required>
-                            <label for="public">Public</label>
+                            <label for="public">Publica</label>
                             <input type="radio" id="private" name="privacy" value="private">
-                            <label for="private">Private</label>
+                            <label for="private">Privada</label>
                         </div>
                         <br>
                         <div class="text-center">

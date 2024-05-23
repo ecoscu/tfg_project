@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <h1 class="titulo">Welcome</h1>
+        <h1 class="titulo">Bienvenido</h1>
         <div class="transparent-div">
             <p>Crea tus listas de películas y series, marca, valora y sigue tu contenido favorito.</p>
         </div>
@@ -20,7 +20,7 @@
                 <a class="route" href="{{ route('login') }}">Login</a>
             </div>
             <div class="button-wrapper">
-                <a class="route" href="{{ route('register') }}" class="btn btn-primary btn-red">Register</a>
+                <a class="route" href="{{ route('register') }}" class="btn btn-primary btn-red">Registro</a>
             </div>
         </div>
     </div>

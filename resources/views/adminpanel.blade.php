@@ -7,8 +7,10 @@
     <div class="contentlist">
         @foreach ($contenidos as $contenido)
             <div class="contentparalel">
-                <p>{{ $contenido->name }}</p>
-
+                <a href="{{ route('slug', $contenido->slug) }}" class="link">
+                   <p>{{ $contenido->name }}</p> 
+                </a>
+            
                 <a href="{{ route('deletecontent', ['content_id' => $contenido->id]) }}" class="close-icon">
                     <i class="fas fa-times"></i>
                 </a>
