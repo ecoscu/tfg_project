@@ -17,32 +17,42 @@
     </div>
     <hr>
     <h2 class="title">Listas Publicas</h2>
-        <div class="list-grid-flex">
-            @foreach ($publiclists as $list)
-                <div class="list-item-flex">
-                    <a href="{{ route ('list.show', ['lista_id' => $list->id]) }}"">
-                        <div class="list-details">
-                            <p>{{ $list->name }}</p>
-                            @if ($list->privacy == 1)
-                                <i class="fas fa-globe-europe"></i>
-                            @else
-                                <i class="fas fa-lock"></i>
-                            @endif
-                        </div>
-                    </a>
-                </div>
-            @endforeach
-        </div>
+    <div class="list-grid-flex">
+        @foreach ($publiclists as $list)
+            <div class="list-item-flex">
+                <a href="{{ route('list.show', ['lista_id' => $list->id]) }}"">
+                    <div class="list-details">
+                        <p>{{ $list->name }}</p>
+                        @if ($list->privacy == 1)
+                            <i class="fas fa-globe-europe"></i>
+                        @else
+                            <i class="fas fa-lock"></i>
+                        @endif
+                    </div>
+                </a>
+            </div>
+        @endforeach
+    </div>
     <hr>
 
-    <h2 class="title">Comments</h2>
+    <h2 class="title">Comentarios</h2>
+    <div class="filtros">
+        <form action="" method="POST">
+            @csrf
+            <button type="submit" class="filter fecha">Fecha</button>
+        </form>
+        <form action="" method="POST">
+            @csrf
+            <button type="submit" class="filter likes">Likes</button>
+        </form>
+    </div>
     @foreach ($foroComments as $comment)
         <div class="comments-box">
             <div class="comment-cross">
                 <div class="text-lg">{{ $comment->comment }}</div>
                 <a href="{{ route('forocommentdelete', ['comment_id' => $comment->id]) }}">
                     <div>
-                        @if ($comment->user_id == Auth::user()->id)
+                        @if ($comment->user_id == Auth::user()->id || Auth::user()->admin == 1)
                             <i class="fas fa-times"></i>
                         @endif
                     </div>
@@ -51,10 +61,11 @@
 
             <div class="by-box">
                 <div>
-                    <a href=""><i class="far fa-heart" id="heart-icon"></i></a>
-                    {{-- @if ($comment->lcount > 0)
-                        {{ $comment->lcount }}
-                    @endif --}}
+                    <a href="{{ route('likeforocomment', ['comment_id' => $comment->id]) }}"><i class="far fa-heart"
+                            id="heart-icon" style="color: {{ $comment->color }}"></i></a>
+                    @if ($comment->likes > 0)
+                        {{ $comment->likes }}
+                    @endif
                 </div>
                 <div>
                     <div>

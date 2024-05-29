@@ -18,4 +18,8 @@ class ForoComment extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function forolikes()
+    {
+        return $this->hasMany('App\Models\Forolikes', 'comments_id');
+    }
 }

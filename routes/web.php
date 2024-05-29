@@ -85,6 +85,8 @@ Route::get('/adminpanel', [\App\Http\Controllers\AdminPanelController::class, 's
 
 Route::get('/delete-content/{content_id}', [\App\Http\Controllers\ContentController::class, 'delete'])->name('deletecontent');
 
+Route::get('/forolike/{comment_id}', [\App\Http\Controllers\ForoController::class, 'likecomment'])->name('likeforocomment');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

@@ -32,6 +32,57 @@ a {
     margin-left: 70%;
 }
 
+.divfiltro {
+    display: flex;
+    justify-content: center;
+}
+
+.title2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    padding-bottom: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.title2 i {
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.title2:hover {
+    background-color: rgb(69, 67, 67);
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filtros > div {
+    margin-right: 20px;
+}
+
+
+.fecha{
+    all: unset;
+    margin-right: 50px;
+} 
+
+.likes{
+    all: unset;
+} 
+
+.filter:hover{
+    scale: 105%;
+}
+
 .comment-cross {
     display: flex;
     justify-content: space-between;
@@ -103,6 +154,16 @@ a {
 
 .list-item-flex:hover {
     background-color: rgb(62, 61, 61);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.filters>div:first-child {
+    margin-right: 80px;
 }
 
 @media (min-width: 1200px) {
