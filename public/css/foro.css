@@ -29,7 +29,12 @@ a {
 .summit-comment {
     height: 40px;
     border-radius: 15px;
-    margin-left: 70%;
+    font-weight: 600;
+}
+
+.summit-comment:hover{
+    scale:105%;
+    background-color: rgb(195, 194, 194);
 }
 
 .divfiltro {
@@ -81,6 +86,11 @@ a {
 
 .filter:hover{
     scale: 105%;
+    color: rgb(217, 59, 59);
+}
+
+.filter > i{
+    margin-left: 10px;
 }
 
 .comment-cross {
@@ -167,6 +177,10 @@ a {
 }
 
 @media (min-width: 1200px) {
+
+    .comment-box {
+        width: 50%;
+    }
 
     .comments-box {
         width: 50%;

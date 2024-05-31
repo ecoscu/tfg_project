@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head> --}}
+@extends('..layouts.navbar')
 
-</head>
+@section('content')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 <style>
     .privacy label {
@@ -17,12 +20,16 @@
         /* Espacio entre los radio buttons */
     }
 
+    .altura{
+        margin-top: 200px;
+    }
+
 </style>
 
 <body style="background-color:rgb(22, 22, 22); color:white;">
-    <div class="py-5 max-w-7xl text-justify">
+    <div class="py-3 max-w-7xl text-justify">
         <div class="container">
-            <div class="row justify-content-center min-vh-100">
+            <div class="row justify-content-center altura">
                 <div class="col-md-6 d-flex align-items-center">
                     <form action="{{ route('lists.store') }}" method="post" class="mx-auto w-100">
                         @csrf
@@ -55,5 +62,5 @@
     
 
 </body>
-
-</html>
+@endsection
+{{-- </html> --}}

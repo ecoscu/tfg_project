@@ -37,13 +37,11 @@
 
     <h2 class="title">Comentarios</h2>
     <div class="filtros">
-        <form action="" method="POST">
-            @csrf
-            <button type="submit" class="filter fecha">Fecha</button>
+        <form action="{{ route('foro', ['filter' => 'Fecha']) }}" method="GET">
+            <button type="submit" class="filter fecha">Fecha<i class="fas fa-calendar"></i></button>
         </form>
-        <form action="" method="POST">
-            @csrf
-            <button type="submit" class="filter likes">Likes</button>
+        <form action="{{ route('foro', ['filter' => 'Likes']) }}" method="GET">
+            <button type="submit" class="filter likes">Likes<i class="fas fa-thumbs-up"></i></button>
         </form>
     </div>
     @foreach ($foroComments as $comment)
@@ -61,7 +59,7 @@
 
             <div class="by-box">
                 <div>
-                    <a href="{{ route('likeforocomment', ['comment_id' => $comment->id]) }}"><i class="far fa-heart"
+                    <a href="{{ route('likeforocomment', ['comment_id' => $comment->id, 'filter' => $filter]) }}"><i class="far fa-heart"
                             id="heart-icon" style="color: {{ $comment->color }}"></i></a>
                     @if ($comment->likes > 0)
                         {{ $comment->likes }}

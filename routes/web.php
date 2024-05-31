@@ -56,7 +56,7 @@ Route::post('/filter/{filter}', [\App\Http\Controllers\ContentController::class,
 
 Route::post('/rate/{content_id}/{rate}', [\App\Http\Controllers\ContentController::class, 'rate'])->name('rate');
 
-Route::get('/foro', [\App\Http\Controllers\ForoController::class, 'showforo'])->name('foro');
+Route::get('/foro/{filter?}', [\App\Http\Controllers\ForoController::class, 'showforo'])->name('foro');
 
 Route::post('/forocomment', [\App\Http\Controllers\ForoController::class, 'saveforocomment'])->name('forocomment');
 
@@ -85,7 +85,10 @@ Route::get('/adminpanel', [\App\Http\Controllers\AdminPanelController::class, 's
 
 Route::get('/delete-content/{content_id}', [\App\Http\Controllers\ContentController::class, 'delete'])->name('deletecontent');
 
-Route::get('/forolike/{comment_id}', [\App\Http\Controllers\ForoController::class, 'likecomment'])->name('likeforocomment');
+Route::get('/forolike/{comment_id}/{filter?}', [\App\Http\Controllers\ForoController::class, 'likecomment'])->name('likeforocomment');
+
+// Route::post('/forocommentfilter/{filter}', [\App\Http\Controllers\ForoController::class, 'forocommentfilter'])->name('forocommentfilter');
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,13 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-</head>
+</head> --}}
+
+@extends('..layouts.navbar')
+
+@section('content')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <style>
 </style>
 <body style="background-color: rgb(34, 34, 34)">
@@ -82,4 +88,5 @@
 
 </body>
 
-</html>
+@endsection
+{{-- </html> --}}

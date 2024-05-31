@@ -16,18 +16,41 @@ use App\Http\Requests\ForoCommentRequest;
 class ForoController extends Controller
 {
 
-    public function showforo(){
+    // public function forocommentfilter($request){
+
+    //     if ($request == 'Fecha' || $request == '') {
+    //         $foroComments = ForoComment::orderBy('created_at', 'desc')->get();
+    //     } elseif ($request == 'Likes') {
+    //         $foroComments = ForoComment::orderBy('likes', 'desc')->get();
+    //     }
+
+    //     return Redirect::to('/foro/')->with('foroComments', $foroComments);
+    // }
+
+    public function showforo($filter = null)
+    {
         abort_unless(Auth::check(), 401);
 
         $userID = Auth::user()->id;
 
-        $foroComments = ForoComment::orderBy('created_at', 'desc')->get();
+        if ($filter) {
+
+            if ($filter == 'Fecha' || $filter == '') {
+                $foroComments = ForoComment::orderBy('created_at', 'desc')->get();
+            } elseif ($filter == 'Likes') {
+                $foroComments = ForoComment::orderBy('likes', 'desc')->get();
+            }
+
+        } else {
+            $foroComments = ForoComment::orderBy('created_at', 'desc')->get();
+        }
+
 
         $publiclists = Lists::where('privacy', '1')->get();
 
-        foreach($foroComments as $comment){
+        foreach ($foroComments as $comment) {
             $like = Forolikes::where('user_id', $userID)
-            ->where('forocomments_id', $comment->id)->get();
+                ->where('forocomments_id', $comment->id)->get();
 
             if ($like->isEmpty()) {
                 $comment->color = 'white';
@@ -36,11 +59,12 @@ class ForoController extends Controller
             }
         }
 
-        return view('foro', ['foroComments' => $foroComments, 'publiclists' => $publiclists]);
-        
+        return view('foro', ['foroComments' => $foroComments, 'publiclists' => $publiclists, 'filter' => $filter]);
+
     }
 
-    public function saveforocomment(ForoCommentRequest $request){
+    public function saveforocomment(ForoCommentRequest $request)
+    {
         abort_unless(Auth::check(), 401);
         $userID = Auth::user()->id;
 
@@ -53,15 +77,17 @@ class ForoController extends Controller
         return Redirect::to('/foro/');
     }
 
-    public function deletecomment($comments_id){
+    public function deletecomment($comments_id)
+    {
         abort_unless(Auth::check(), 401);
 
-        ForoComment::where('id', $comments_id)->delete();      
+        ForoComment::where('id', $comments_id)->delete();
 
         return Redirect::to('/foro/');
     }
 
-    public function likecomment($comment_id){
+    public function likecomment($comment_id, $filter = null)
+    {
 
         $userID = Auth::user()->id;
 
@@ -75,7 +101,7 @@ class ForoController extends Controller
                 ->delete();
 
             ForoComment::where('id', $comment_id)->decrement('likes');
-        }else{
+        } else {
 
             $like = new Forolikes;
             $like->user_id = $userID;
@@ -85,7 +111,15 @@ class ForoController extends Controller
             ForoComment::where('id', $comment_id)->increment('likes');
         }
 
-        return Redirect::to('/foro/');
-        
+        if ($filter) {
+            if ($filter == 'Likes') {
+                return Redirect::to('/foro/Likes?');
+            } elseif ($filter == 'Fecha') {
+                return Redirect::to('/foro/Fecha?');
+            }
+        }else{
+            return Redirect::to('/foro/');
+        }
+
     }
 }
