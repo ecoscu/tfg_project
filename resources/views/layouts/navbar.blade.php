@@ -23,8 +23,8 @@
             </div>
             <ul>
                 <li class="nav-op"><a href={{ route('dashboard') }}><i class="fas fa-home nav_ico"></i></a></li>
-                <li><a href={{ route('content.movies') }}><i class="fas fa-film nav_ico"></i>Movies</a></li>
-                <li><a href={{ route('content.series') }}><i class="fas fa-tv nav_ico"></i>TV Shows</a></li>
+                <li><a href={{ route('content.movies') }}><i class="fas fa-film nav_ico"></i>Peliculas</a></li>
+                <li><a href={{ route('content.series') }}><i class="fas fa-tv nav_ico"></i>Series</a></li>
                 <li><a href={{ route('foro') }}><i class="fas fa-rocket nav_ico"></i> Foro</a></li>
                 <li class="nav-op"><a href={{ route('profile.page') }}><i class="fas fa-user-alt nav_ico"></i></a></li>
 

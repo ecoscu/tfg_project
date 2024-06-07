@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+    color: #1a202c; /* text-gray-900 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.sm\:justify-center {
+    justify-content: center; /* Aplica solo en tamaños de pantalla pequeños y mayores */
+}
+
+.items-center {
+    align-items: center;
+}
+
+.pt-6 {
+    padding-top: 1.5rem;
+}
+
+.sm\:pt-0 {
+    padding-top: 0; /* Aplica solo en tamaños de pantalla pequeños y mayores */
+}
+
+.w-full {
+    width: 90%;
+}
+
+.sm\:max-w-md {
+    max-width: 20rem; /* Aplica solo en tamaños de pantalla pequeños y mayores */
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.sm\:rounded-lg {
+    border-radius: 0.5rem; /* Aplica solo en tamaños de pantalla pequeños y mayores */
+}
+
+label{
+    margin-bottom: 15px;
+}
+
+input{
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button{
+    background-color: red;
+    border-radius: 10px;
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(134, 22, 22);
+}

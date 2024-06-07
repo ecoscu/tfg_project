@@ -14,7 +14,7 @@ body {
 
 .titulo{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 70px;
+    font-size: 370%;
 }
 
 .container {
@@ -39,7 +39,7 @@ body {
 .button-container {
     display: flex; /* Cambiamos a un contenedor flex para alinear los elementos */
     justify-content: center; /* Centra los elementos horizontalmente */
-    gap: 100px; /* Espacio entre los botones */
+    gap: 50px; /* Espacio entre los botones */
 }
 
 .button-wrapper {
